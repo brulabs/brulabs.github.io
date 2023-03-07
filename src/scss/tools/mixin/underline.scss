@@ -1,0 +1,29 @@
+@mixin underline($element: 'span', $color: currentColor, $distance: 0, $width: 100%, $height: 1px) {
+    #{$element} {
+        margin-bottom: -$distance;
+        padding-bottom: $distance;
+        background-image: linear-gradient($color, $color);
+        background-size: $width $height;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        text-decoration: none;
+    }
+}
+
+@mixin animated-underline($element: 'span', $width: 100%, $height: 1px, $duration: 0.3s) {
+    #{$element} {
+        transition: background-size $duration;
+    }
+
+    &:hover {
+        #{$element} {
+            background-size: $width $height;
+        }
+    }
+
+    &:focus-visible {
+        #{$element} {
+            background-size: $width $height;
+        }
+    }
+}
