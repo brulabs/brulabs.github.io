@@ -1,1 +1,29 @@
-Hello World! Hello Internez!
+<!doctype html>
+
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>brulabs</title>
+        <style>
+            * { margin: 0; padding: 0; }
+            body { height: calc(var(--vh, 1vh) * 100); background-color: #18181a; color: #fff; text-align: center; }
+            main { display: flex; flex-direction: column; align-items: center; height: calc(100% - 100px); padding: 50px 15px; }
+            h1 { color: #af9862; font-size: 50px; }
+            h2 { margin-top: 50px; font-size: 30px; font-weight: normal; }
+            span { margin-top: auto; }
+            /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+        </style> 
+    </head>
+    <body>
+        <main>
+            <h1>brulabs</h1>
+            <h2>website is coming soon</h2>
+            <span>&copy; 2023 | brulabs</span>
+        </main>
+        <script>
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        </script> 
+    </body>
+</html>
