@@ -7,19 +7,19 @@
         <title>brulabs</title>
         <style>
             * { margin: 0; padding: 0; }
-            body { height: calc(var(--vh, 1vh) * 100); background-color: #18181a; color: #fff; text-align: center; }
-            main { display: flex; flex-direction: column; align-items: center; height: calc(100% - 100px); padding: 50px 15px; }
-            h1 { color: #af9862; font-size: 50px; }
-            h2 { margin-top: 50px; font-size: 30px; font-weight: normal; }
-            span { margin-top: auto; }
+            body { height: calc(var(--vh, 1vh) * 100); background-color: #18181a; color: #fff; font-family: monospace; text-align: center; }
+            main { display: flex; flex-direction: column; align-items: center; height: calc(100% - min(max(50px, calc(3.125rem + ((1vw - 3.2px) * 4.4643))), 100px)); padding: min(max(25px, calc(1.5625rem + ((1vw - 3.2px) * 2.2321))), 50px) 15px; }
+            h1 { margin-bottom: min(max(25px, calc(1.5625rem + ((1vw - 3.2px) * 2.2321))), 50px); color: #af9862; font-size: min(max(45px, calc(2.8125rem + ((1vw - 3.2px) * 4.0179))), 90px); }
+            img { width: min(max(250px, calc(15.625rem + ((1vw - 3.2px) * 22.3214))), 500px); margin-bottom: min(max(25px, calc(1.5625rem + ((1vw - 3.2px) * 2.2321))), 50px); }
+            span:last-child { margin-top: auto; }
             /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
         </style> 
     </head>
     <body>
         <main>
             <h1>brulabs</h1>
-            <h2>website is coming soon</h2>
-            <span>&copy; 2023 | brulabs</span>
+            <img src="assets/img/familienwappen.png" width="250" alt="Familienwappen Brunner">
+            <span>&copy; 2023 | all rights reserved</span>
         </main>
         <script>
             let vh = window.innerHeight * 0.01;
