@@ -1,0 +1,21 @@
+{% import "../tools/macro.twig" as macro %}
+
+<!doctype html>
+<html lang="de">
+	<head>
+		{% include "head.twig" %}
+		{% block styles %}{% endblock %}
+	</head>
+	<body class="{{ macro.modifier('page', page_modifier|default('default'))|spaceless }}">
+
+		{% include "../components/header.twig" %}
+
+		<main class="main"> {% block main %}{% endblock %}
+			</main>
+
+			{# todo: include footer #}
+
+			{% block scripts %}{% endblock %}
+			<script src="Javascript/main.js"></script>
+		</body>
+	</html>

@@ -1,0 +1,40 @@
+{# Class with default modifier #}
+{% macro modifier(class, variants = 'default') %}
+	{% set classes = class %}
+	{% if variants %}
+		{% set variants = variants|split(' ') %}
+		{% for variant in variants %}
+			{% set classes = classes ~ ' ' ~ class ~ '--' ~ variant %}
+		{% endfor %}
+	{% endif %}
+	{{ classes }}
+{% endmacro %}
+
+{# Modifier helper with default modifier #}
+{% macro utility(class, variants = 'default') %}
+	{% set classes = '' %}
+	{% if variants %}
+		{% set variants = variants|split(' ') %}
+		{% for variant in variants %}
+			{% set classes = classes ~ ' ' ~ class ~ '-' ~ variant %}
+		{% endfor %}
+	{% endif %}
+	{{ classes }}
+{% endmacro %}
+
+{# Set class with optional modifiers and additional classes (no --default modifier) #}
+{% macro set_class(class, modifiers) %}
+	{% set classes = class %}
+	{% if modifiers %}
+		{% set modifiers = modifiers|split(' ') %}
+		{% for modifier in modifiers %}
+			{% set classes = classes ~ ' ' ~ class ~ '--' ~ modifier %}
+		{% endfor %}
+	{% endif %}
+	{{ classes }}
+{% endmacro %}
+
+{# Modifier to trunc text #}
+{% macro trunc(txt, len) -%}
+	{{ txt|length > len ? txt|slice(0, len) : txt }}
+{% endmacro %}
