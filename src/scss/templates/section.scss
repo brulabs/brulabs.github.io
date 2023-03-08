@@ -1,0 +1,50 @@
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    background-color: deeppink;
+
+    > * {
+        max-width: 1024px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    //@each $lat, $breakpoint in $mq-breakpoints {
+    //    &[container="#{$lat}"] {
+    //        > * {
+    //            width: 100%;
+    //            max-width: to-rem(map-get($mq-breakpoints, #{$lat}));
+    //        }
+    //    }
+    //}
+    //
+    //@each $gap, $gap-mq in $gaps {
+    //    &[gap-top="#{$gap}"] {
+    //        @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+    //    }
+    //
+    //    &[gap-bottom="#{$gap}"] {
+    //        @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+    //    }
+    //}
+
+    //&[bg="hig"] {
+    //    background-color: $highlight-color;
+    //}
+    //
+    //&[bg="pri"] {
+    //    background-color: $primary-color;
+    //}
+    //
+    //&[bg="sec"] {
+    //    background-color: $secondary-color;
+    //}
+    //
+    //&[bg="ter"] {
+    //    background-color: $tertiary-color;
+    //}
+}
