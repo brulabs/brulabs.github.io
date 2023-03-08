@@ -8,7 +8,7 @@
 	</head>
 	<body class="{{ macro.modifier('page', page_modifier|default('default'))|spaceless }}">
 
-		{% include "../components/header.twig" %}
+{#		{% include "../components/header.twig" %}#}
 
 		<main class="main"> {% block main %}{% endblock %}
 			</main>
@@ -19,3 +19,8 @@
 			<script src="Javascript/main.js"></script>
 		</body>
 	</html>
+
+
+{#
+https://www.npmjs.com/package/gulp-twig
+#}
