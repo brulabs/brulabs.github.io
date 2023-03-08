@@ -13,7 +13,7 @@
             img { width: min(max(250px, calc(15.625rem + ((1vw - 3.2px) * 22.3214))), 500px); margin-bottom: min(max(25px, calc(1.5625rem + ((1vw - 3.2px) * 2.2321))), 50px); }
             span:last-child { margin-top: auto; }
             /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
-        </style> 
+        </style>
     </head>
     <body>
         <main>
@@ -25,6 +25,6 @@
         <script>
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
-        </script> 
+        </script>
     </body>
 </html>
