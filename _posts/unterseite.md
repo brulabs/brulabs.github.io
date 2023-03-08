@@ -1,6 +1,6 @@
 ---
-layout: post
-title: "unterseite"
+title: "Unterseite"
+permalink: /unterseite/
 ---
 
 # Unterseite
@@ -30,6 +30,6 @@ Jetzt sollten Ihre Unterseiten ohne .html-Erweiterung angezeigt werden. Wenn Sie
 </table>
 
 
-[Link zur Startseite](index.md)
+[Link zur Startseite](index)
 
-[Link zur Startseite aus Ordner](../index.md)
+[Link zur Startseite aus Ordner](../index)

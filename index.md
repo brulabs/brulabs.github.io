@@ -1,3 +1,8 @@
+---
+title: "Startseite"
+permalink: /home/
+---
+
 # Startseite
 
 | Header 1 | Header 2 | Header 3 |
@@ -11,6 +16,6 @@ Erstellen Sie ein neues Repository auf GitHub und legen Sie Ihren Quellcode in e
 Fügen Sie eine Datei namens Gemfile in das Stammverzeichnis Ihres Repositorys hinzu, wenn noch keine vorhanden ist.
 Öffnen Sie die Gemfile-Datei und fügen Sie die folgende Zeile hinzu:
 
-[Link zur Unterseite](unterseite.md)
+[Link zur Unterseite](unterseite)
 
-[Link zur Unterseite mit Ordner](_posts/unterseite.md)
+[Link zur Unterseite mit Ordner](_posts/unterseite)
