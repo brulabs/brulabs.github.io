@@ -11,7 +11,7 @@ var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync').create();
 var config = {
     'src': '',
-    'dest': '../build/',
+    'dest': '../',
     'minify': false,
     'sourcemaps': false
 };
@@ -92,27 +92,6 @@ function scripts() {
     .pipe(browserSync.stream());
 }
 
-// Optimize images
-function images() {
-    return gulp.src(config.src + 'assets/img/**/*.{gif,jpg,png,svg}')
-    .pipe(gulp.dest(config.dest + 'assets/img'))
-    .pipe(browserSync.stream());
-}
-
-// Optimize icons
-function icons() {
-    return gulp.src(config.src + 'assets/icons/**/*.{gif,png,svg}')
-    .pipe(gulp.dest(config.dest + 'assets/icons'))
-    .pipe(browserSync.stream());
-}
-
-// Optimize fonts
-function fonts() {
-    return gulp.src(config.src + 'assets/fonts/**/*.{woff,woff2,ttf,otf}')
-    .pipe(gulp.dest(config.dest + 'assets/fonts'))
-    .pipe(browserSync.stream());
-}
-
 // Serve compiled files
 function serve(done) {
     browserSync.init({
@@ -131,13 +110,10 @@ function watch(done) {
     gulp.watch(config.src + 'twig/**/*.twig', twig);
     gulp.watch(config.src + 'scss/**/*.scss', styles);
     gulp.watch(config.src + 'js/**/*.js', scripts);
-    gulp.watch(config.src + 'assets/images/**/*.{gif,jpg,png,svg}', images);
-    gulp.watch(config.src + 'assets/images/**/*.{gif,png,svg}', icons);
-    gulp.watch(config.src + 'assets/fonts/**/*.{woff,woff2,ttf,otf}', fonts);
     done();
 }
 
-var build = gulp.parallel(twig, styles, scripts, images, icons, fonts);
+var build = gulp.parallel(twig, styles, scripts);
 
 gulp.task('build', build);
 gulp.task('watch', watch);

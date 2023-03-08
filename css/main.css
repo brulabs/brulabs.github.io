@@ -1,0 +1,12 @@
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: deeppink;
+}
+section > * {
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+}
