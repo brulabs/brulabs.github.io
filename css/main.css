@@ -3,20 +3,6 @@
   color: green;
 }
 
-@font-face {
-  font-family: "mabry-medium-pro";
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url("../Fonts/mabry-medium-pro.woff2") format("woff2"), url("../Fonts/mabry-medium-pro.woff") format("woff");
-}
-@font-face {
-  font-family: "mabry-black-pro";
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url("../Fonts/mabry-black-pro.woff2") format("woff2"), url("../Fonts/mabry-black-pro.woff") format("woff");
-}
 /*
     Usage example:
     body { @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px)); }
@@ -812,4 +798,81 @@ section[data-styles*=╤-g-lg] {
 
 .btn1:hover {
   cursor: pointer;
+}
+
+#menu {
+  z-index: 2;
+}
+
+.nav {
+  transition: 0.3s ease;
+  display: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.nav ul {
+  padding: 0 22px;
+}
+
+.nav li {
+  list-style: none;
+  padding: 12px 0;
+}
+
+.nav li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  font-weight: bold;
+}
+
+.menu-bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.menu-bg {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  margin: 30px 0 20px 20px;
+  background: radial-gradient(circle, #DC052D, #DC052D);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.change {
+  display: block;
+}
+
+.change .bar {
+  background-color: white;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar2 {
+  opacity: 0;
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change-bg {
+  width: 520px;
+  height: 460px;
+  transform: translate(-60%, -30%);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
 }
