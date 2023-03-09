@@ -1,10 +1,20 @@
 // sass-mq
 @import 'vendors/mq';
 
-// Tools - functions & keyframes
-@import 'tools/functions/functions';
+// Tools - functions
+@import 'tools/functions/get-icon';
 @import 'tools/functions/gutter';
-@import 'tools/keyframes/keyframes';
+@import 'tools/functions/hexToRGB';
+@import 'tools/functions/modular-scale';
+@import 'tools/functions/pow';
+@import 'tools/functions/serialize-breakpoints';
+@import 'tools/functions/str-replace';
+@import 'tools/functions/strip-unit';
+@import 'tools/functions/svg-url';
+@import 'tools/functions/to-rem';
+
+// Tools - keyframes
+//@import 'tools/keyframes/keyframes';
 
 // Settings
 @import 'settings/breakpoint';
@@ -48,8 +58,8 @@
 @import 'base/table';
 @import 'base/ul';
 
-// Vendors - original file include
-
+// Templates
+@import 'templates/section';
 
 // Components
 

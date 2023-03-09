@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) {
+    @return pow($type-scale, $exp) * $size;
+}

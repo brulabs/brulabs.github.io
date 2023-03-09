@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function serialize-breakpoints($breakpoints) {
+    $str: '';
+
+    @each $key, $value in $breakpoints {
+        $str: $str + $key + '=' + $value + '&';
+    }
+
+    @return str-slice($str, 1, -2);
+}

@@ -38,5 +38,15 @@ section {
             @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
         }
     }
+
+    //@each $gap, $gap-mq in $gaps {
+    //    &[data-styles*="╧-#{$gap}"] {
+    //        @include fluid-calc('padding-top', (to-rem(#{map-get($gap-mq, min)}), to-rem(#{map-get($gap-mq, max)})));
+    //    }
+    //
+    //    &[data-styles*="╤-#{$gap}"] {
+    //        @include fluid-calc('padding-bottom', (to-rem(#{map-get($gap-mq, min)}), to-rem(#{map-get($gap-mq, max)})));
+    //    }
+    //}
 }
 
