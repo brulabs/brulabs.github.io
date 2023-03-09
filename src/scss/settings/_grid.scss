@@ -1,0 +1,10 @@
+// Grid
+$grid-columns: 12;
+$grid-gutter: to-rem(30px);
+$grid-gutter-mobile: to-rem(15px);
+$grid-container: map-get($breakpoints, xl);
+$grid-container-gutter: $grid-gutter;
+$grid-container-gutter-mobile: $grid-gutter-mobile;
+$grid-pull-classes: true;
+$grid-push-classes: true;
+$grid-offset-classes: true;

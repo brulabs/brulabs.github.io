@@ -1,0 +1,31 @@
+// Form
+$input-selector: (
+    '[type="email"]',
+    '[type="number"]',
+    '[type="password"]',
+    '[type="search"]',
+    '[type="tel"]',
+    '[type="text"]',
+    '[type="url"]',
+    '[type="date"]',
+    'textarea',
+    'select'
+);
+
+$input-height: to-rem(50px);
+$input-padding-vertical: to-rem(15px);
+$input-padding-horizontal: to-rem(15px);
+$input-bg: transparent;
+$input-color: $text-color;
+$input-border-width: to-rem(1px);
+$input-border-color: $color-gray;
+$input-focus-border-color: darken($input-border-color, 50%);
+$input-border-radius: 0;
+$input-transition: border-color 0.3s ease-in-out;
+$input-disabled-bg: lighten($input-color, 50%);
+$input-disabled-color: darken($input-border-color, 20%);
+$input-disabled-border-color: $color-gray;
+$checkbox-border-radius: $input-border-radius;
+$placeholder-color: lighten($color-gray, 50%);
+
+$form-gutter: to-rem(30px);

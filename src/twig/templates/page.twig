@@ -1,26 +1,27 @@
-{% import "../tools/macro.twig" as macro %}
-
 <!doctype html>
 <html lang="de">
 	<head>
-		{% include "head.twig" %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="“robots“" content="“noindex,nofollow“"/>
+        <title>{{ page_title }}</title>
+        <link rel="icon" type="image/x-icon" href="/Images/icons/favicon/favicon.ico">
+        <link rel="stylesheet" href="css/vendors/modern-normalize.css">
+        <link rel="stylesheet" href="css/main.css">
 		{% block styles %}{% endblock %}
 	</head>
-	<body class="{{ macro.modifier('page', page_modifier|default('default'))|spaceless }}">
+	<body class="page{% if page_modifier %} page--{{ page_modifier }}{% endif %}">
 
-{#		{% include "../components/header.twig" %}#}
+        {# % include "../organism/header.twig" %} #}
 
-		<main class="main"> {% block main %}{% endblock %}
-			</main>
+		<main class="main">
+            {% block main %}{% endblock %}
+        </main>
 
-			{# todo: include footer #}
+        {# % include "../organism/header.twig" %} #}
 
-			{% block scripts %}{% endblock %}
-			<script src="Javascript/main.js"></script>
-		</body>
-	</html>
-
-
-{#
-https://www.npmjs.com/package/gulp-twig
-#}
+        {% block scripts %}{% endblock %}
+        <script src="Javascript/main.js"></script>
+    </body>
+</html>

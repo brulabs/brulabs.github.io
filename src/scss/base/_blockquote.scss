@@ -1,0 +1,23 @@
+blockquote {
+    @include fluid-calc('padding', (to-rem(20px), to-rem(40px)));
+    @include fluid-calc('font-size', (to-rem(20px), to-rem(28px)));
+
+    position: relative;
+    max-width: map-get($breakpoints, lg);
+    margin-bottom: 0;
+
+    &::before {
+        @include fluid-calc('width', (to-rem(60px), to-rem(120px)));
+        @include fluid-calc('height', (to-rem(45px), to-rem(90px)));
+
+        content: '';
+        position: absolute;
+        top: to-rem(10px);
+        left: 0;
+        z-index: -1;
+        display: inline-block;
+        background-image: url(get-icon('quote', $highlight-color));
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

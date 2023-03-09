@@ -1,8 +1,4 @@
-{#
-https://css-tricks.com/weird-design-languages-with-attributes/
-#}
-
-<section _class="{{ macro.utility('bg', bg|default('def'))|spaceless }} {{ macro.utility('gap', gap|default('toh bmd'))|spaceless }} {{ macro.utility('lat', container|default('md'))|spaceless }}" bg="ter" gap-top="lg" gap-bottom="lg" container="lg">
-	<h2>{{ section_title }}</h2>
-	{% block element %}{% endblock %}
+<section class="section" data-styles="{{ data_styles }}">
+    <h2>{{ section_title }}</h2>
+    {% block section %}{% endblock %}
 </section>

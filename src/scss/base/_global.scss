@@ -1,0 +1,55 @@
+body {
+    @include fluid-calc('font-size', (to-rem(16px), to-rem(20px)));
+
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    background-color: $global-bg;
+    color: $text-color;
+    overflow-x: hidden;
+}
+
+button {
+    @include button-unstyled;
+}
+
+em, i {
+    font-style: italic;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+img {
+    display: inline-block;
+    image-rendering: -webkit-optimize-contrast; // fix for chrome browswer
+}
+
+strike, s {
+    text-decoration: line-through;
+}
+
+strong, b {
+    font-family: $font-family-secondary;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: 0.8rem;
+    bottom: 0;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.8rem;
+    top: 0;
+}
+
+svg {
+    display: inline-block;
+}
+
+u {
+    text-decoration-line: underline;
+}

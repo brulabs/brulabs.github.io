@@ -1,0 +1,30 @@
+ol {
+    @include list-unstyled();
+}
+
+ol:not([class]) {
+    .c-richtext & {
+        padding-left: to-rem(30px);
+        counter-reset: my-awesome-counter;
+
+        li {
+            position: relative;
+            counter-increment: my-awesome-counter;
+
+            &:not(:last-child) {
+                @include fluid-calc('margin-bottom', (to-rem(10px), to-rem(20px)));
+            }
+
+            &::before {
+                position: absolute;
+                left: to-rem(-30px);
+                content: counter(my-awesome-counter) ".";
+                color: $text-color;
+
+                .l-section--primary & {
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

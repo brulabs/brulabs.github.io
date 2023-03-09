@@ -1,0 +1,34 @@
+// Basic colors
+$color-black: #000;
+$color-blue: #00f;
+$color-cyan: #0ff;
+$color-green: #0f0;
+$color-gray: #808080;
+$color-magenta: #f0f;
+$color-orange: #ff681f;
+$color-red: #f00;
+$color-yellow: #ff0;
+$color-white: #fff;
+
+// Project colors
+$color-spring-green: #0fa;
+$color-blue-smoke: #7e938c;
+
+// Global & section color variables
+$global-bg: $color-white;
+$default-color: $color-white;
+$primary-color: $default-color;
+$secondary-color: $default-color;
+$tertiary-color: $default-color;
+
+// State color variables
+$error-color: $color-red;
+$info-color: $color-blue;
+$success-color: $color-green;
+$warning-color: $color-orange;
+
+// Other color variables
+$highlight-color: $color-spring-green;
+$icon-color: $color-black;
+$link-color: $color-black;
+$text-color: $color-black;

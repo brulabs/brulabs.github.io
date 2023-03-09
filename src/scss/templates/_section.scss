@@ -4,47 +4,39 @@ section {
     flex-direction: column;
     align-items: center;
 
-
-    background-color: deeppink;
-
-    > * {
-        max-width: 1024px;
-        margin-right: auto;
-        margin-left: auto;
+    &[data-styles*="highlight"] {
+        background-color: $highlight-color;
     }
 
-    //@each $lat, $breakpoint in $mq-breakpoints {
-    //    &[container="#{$lat}"] {
-    //        > * {
-    //            width: 100%;
-    //            max-width: to-rem(map-get($mq-breakpoints, #{$lat}));
-    //        }
-    //    }
-    //}
-    //
-    //@each $gap, $gap-mq in $gaps {
-    //    &[gap-top="#{$gap}"] {
-    //        @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
-    //    }
-    //
-    //    &[gap-bottom="#{$gap}"] {
-    //        @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
-    //    }
-    //}
+    &[data-styles*="primary"] {
+        background-color: $primary-color;
+    }
 
-    //&[bg="hig"] {
-    //    background-color: $highlight-color;
-    //}
-    //
-    //&[bg="pri"] {
-    //    background-color: $primary-color;
-    //}
-    //
-    //&[bg="sec"] {
-    //    background-color: $secondary-color;
-    //}
-    //
-    //&[bg="ter"] {
-    //    background-color: $tertiary-color;
-    //}
+    &[data-styles*="secondary"] {
+        background-color: $secondary-color;
+    }
+
+    &[data-styles*="tertiary"] {
+        background-color: $tertiary-color;
+    }
+
+    @each $lat, $breakpoint in $breakpoints {
+        &[data-styles*="#{$lat}"] {
+            > * {
+                width: 100%;
+                max-width: to-rem(map-get($breakpoints, #{$lat}));
+            }
+        }
+    }
+
+    @each $gap, $gap-mq in $gaps {
+        &[data-styles*="╧-#{$gap}"] {
+            @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+        }
+
+        &[data-styles*="╤-#{$gap}"] {
+            @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+        }
+    }
 }
+

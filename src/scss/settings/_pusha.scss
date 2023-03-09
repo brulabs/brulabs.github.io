@@ -1,0 +1,7 @@
+$pusha-z-index: 200 !default;
+$pusha-duration: 0.3s !default;
+$pusha-easing: ease !default;
+$pusha-blocker-bg: transparent;
+$pusha-blocker-z-index: $pusha-z-index + 10 !default;
+$pusha-blocker-duration: $pusha-duration !default;
+$pusha-directions: (left, right, top, bottom) !default;

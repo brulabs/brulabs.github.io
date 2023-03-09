@@ -1,0 +1,19 @@
+// Gap
+$gaps: (
+    zero: (
+        xs: 0,
+        lg: 0
+    ),
+    small: (
+        xs: 15px,
+        lg: 75px
+    ),
+    default: (
+        xs: 30px,
+        lg: 150px
+    ),
+    large: (
+        xs: 75px,
+        lg: 250px
+    )
+);
