@@ -13,9 +13,6 @@
 @import 'tools/functions/svg-url';
 @import 'tools/functions/to-rem';
 
-// Tools - keyframes
-//@import 'tools/keyframes/keyframes';
-
 // Settings
 @import 'settings/breakpoint';
 @import 'settings/colors';
@@ -33,6 +30,9 @@
 @import 'settings/spacing';
 @import 'settings/table';
 @import 'settings/typography';
+
+// Tools - keyframes
+@import 'tools/keyframes/pulse-live';
 
 // Tools - mixin
 @import 'tools/mixin/button';
