@@ -13,9 +13,11 @@ $color-white: #fff;
 // Project colors
 $color-spring-green: #0fa;
 $color-blue-smoke: #7e938c;
+$color-ultramarine: #0f05a0;
+$color-woodsmoke: #18181a;
 
 // Global & section color variables
-$global-bg: $color-white;
+$global-bg: $color-woodsmoke;
 $default-color: $color-white;
 $primary-color: $default-color;
 $secondary-color: $default-color;
@@ -32,3 +34,4 @@ $highlight-color: $color-spring-green;
 $icon-color: $color-black;
 $link-color: $color-black;
 $text-color: $color-black;
+$zueriblau: $color-ultramarine;
