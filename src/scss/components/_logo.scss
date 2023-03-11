@@ -11,7 +11,7 @@
     pointer-events: none; //todo: delete later
 
     html[color-mode="dark"] & {
-        text-shadow: $highlight-color 1px 0 5px;
+        text-shadow: $highlight-color 1px 0 6px;
         color: $global-bg-dark;
 
         &:hover {
@@ -21,8 +21,8 @@
     }
 
     html[color-mode="light"] & {
-        text-shadow: $zueriblau 1px 0 5px;
-        color: $global-bg-bright;
+        text-shadow: $global-bg-dark 1px 0 6px;
+        color: $global-bg-dark;
 
         &:hover {
             color: $zueriblau;

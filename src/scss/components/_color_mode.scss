@@ -31,7 +31,10 @@
         @include fluid-calc('width', (to-rem(32px), to-rem(64px)));
 
         height: auto;
-        color: $color-white;
+
+        html[color-mode="dark"] & {
+            color: $highlight-color;
+        }
 
         html[color-mode="light"] & {
             color: $text-color;

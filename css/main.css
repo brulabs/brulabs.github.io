@@ -890,7 +890,6 @@ html[color-mode=dark] .color-mode__btn:hover {
 .color-mode svg {
   width: 2rem;
   height: auto;
-  color: #fff;
 }
 @media (min-width: 20em) {
   .color-mode svg {
@@ -901,6 +900,9 @@ html[color-mode=dark] .color-mode__btn:hover {
   .color-mode svg {
     width: 4rem;
   }
+}
+html[color-mode=dark] .color-mode svg {
+  color: #af9862;
 }
 html[color-mode=light] .color-mode svg {
   color: #000;
@@ -1112,7 +1114,7 @@ html[color-mode=light] .color-mode svg {
   }
 }
 html[color-mode=dark] .logo {
-  text-shadow: #af9862 1px 0 5px;
+  text-shadow: #af9862 1px 0 6px;
   color: #18181a;
 }
 html[color-mode=dark] .logo:hover {
@@ -1120,8 +1122,8 @@ html[color-mode=dark] .logo:hover {
   text-shadow: #fff 1px 0 5px;
 }
 html[color-mode=light] .logo {
-  text-shadow: #0f05a0 1px 0 5px;
-  color: #fafafa;
+  text-shadow: #18181a 1px 0 6px;
+  color: #18181a;
 }
 html[color-mode=light] .logo:hover {
   color: #0f05a0;
