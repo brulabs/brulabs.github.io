@@ -9,18 +9,27 @@
 }
 
 .color-mode {
+    @include fluid-calc('top', (to-rem(26px), to-rem(34px)));
+    @include fluid-calc('right', (to-rem(10px), to-rem(34px)));
+
     position: fixed;
-    top: to-rem(20px);
-    right: to-rem(20px);
 
     &__btn {
         cursor: pointer;
+
+        html[color-mode="dark"] & {
+            opacity: 0.4;
+            transition: opacity 0.3s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 
     svg {
         @include fluid-calc('width', (to-rem(32px), to-rem(64px)));
 
-        //width: to-rem(64px);
         height: auto;
         color: $color-white;
 
@@ -29,3 +38,4 @@
         }
     }
 }
+

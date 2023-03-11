@@ -853,12 +853,39 @@ section[data-styles*=╤-g-lg] {
 }
 
 .color-mode {
+  top: 1.625rem;
+  right: 0.625rem;
   position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
+}
+@media (min-width: 20em) {
+  .color-mode {
+    top: calc(1.625rem + 0.5 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .color-mode {
+    top: 2.125rem;
+  }
+}
+@media (min-width: 20em) {
+  .color-mode {
+    right: calc(0.625rem + 1.5 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .color-mode {
+    right: 2.125rem;
+  }
 }
 .color-mode__btn {
   cursor: pointer;
+}
+html[color-mode=dark] .color-mode__btn {
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+}
+html[color-mode=dark] .color-mode__btn:hover {
+  opacity: 1;
 }
 .color-mode svg {
   width: 2rem;
@@ -1067,11 +1094,12 @@ html[color-mode=light] .color-mode svg {
 .logo {
   font-size: 3.75rem;
   display: inline-block;
-  padding: 0.3125rem 0.625rem;
+  padding: 0 0.625rem;
   font-weight: 500;
   font-style: normal;
   line-height: 1;
   transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+  pointer-events: none;
 }
 @media (min-width: 20em) {
   .logo {
@@ -1092,7 +1120,6 @@ html[color-mode=dark] .logo:hover {
   text-shadow: #fff 1px 0 5px;
 }
 html[color-mode=light] .logo {
-  visibility: hidden;
   text-shadow: #0f05a0 1px 0 5px;
   color: #fafafa;
 }
@@ -1107,6 +1134,7 @@ html[color-mode=light] .logo:hover {
   max-width: 38.25rem;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 2.5rem;
   padding-right: 0.625rem;
   padding-left: 0.625rem;
   color: #18181a;
