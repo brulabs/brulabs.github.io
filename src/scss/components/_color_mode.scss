@@ -1,0 +1,29 @@
+/* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
+:root[color-mode="light"] .light--hidden {
+    display: none;
+}
+
+/* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
+:root[color-mode="dark"] .dark--hidden {
+    display: none;
+}
+
+.color-mode {
+    position: fixed;
+    top: to-rem(20px);
+    right: to-rem(20px);
+
+    &__btn {
+        cursor: pointer;
+    }
+
+    svg {
+        width: to-rem(64px);
+        height: auto;
+        color: $color-white;
+
+        html[color-mode="light"] & {
+            color: $text-color;
+        }
+    }
+}

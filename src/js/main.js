@@ -2,6 +2,7 @@
 let lastScroll = 0;
 
 //=include partials/custom-properties.js
+//=include partials/toggle-color-mode.js
 
 
 document.addEventListener("DOMContentLoaded", function(event) {

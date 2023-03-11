@@ -19,3 +19,7 @@ git push origin <branch-name>
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
 https://www.lookuptables.com/text/extended-ascii-table
+
+## Dark mode toggle
+
+[Complete Guide](https://ryanfeigenbaum.com/dark-mode/)

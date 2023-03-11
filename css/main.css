@@ -432,7 +432,7 @@ body {
   font-family: "ibm-plex-sans", Courier New, sans-serif;
   line-height: 1.4;
   background-color: #18181a;
-  color: #000;
+  color: #fff;
   overflow-x: hidden;
 }
 @media (min-width: 20em) {
@@ -444,6 +444,10 @@ body {
   body {
     font-size: 1.25rem;
   }
+}
+html[color-mode=light] body {
+  background-color: #fff;
+  color: #000;
 }
 
 button {
@@ -838,6 +842,33 @@ section[data-styles*=╤-g-lg] {
   }
 }
 
+/* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
+:root[color-mode=light] .light--hidden {
+  display: none;
+}
+
+/* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
+:root[color-mode=dark] .dark--hidden {
+  display: none;
+}
+
+.color-mode {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+.color-mode__btn {
+  cursor: pointer;
+}
+.color-mode svg {
+  width: 4rem;
+  height: auto;
+  color: #fff;
+}
+html[color-mode=light] .color-mode svg {
+  color: #000;
+}
+
 .btn1 {
   position: relative;
   z-index: 999;
@@ -1027,7 +1058,6 @@ section[data-styles*=╤-g-lg] {
   font-style: normal;
   line-height: 1;
   text-align: center;
-  color: #18181a;
   text-shadow: #af9862 1px 0 5px;
   transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -1041,7 +1071,26 @@ section[data-styles*=╤-g-lg] {
     font-size: 7.5rem;
   }
 }
-.header__inner .logo:hover {
+html[color-mode=dark] .header__inner .logo {
+  color: #18181a;
+}
+html[color-mode=dark] .header__inner .logo:hover {
   color: #0f05a0;
   text-shadow: #fff 1px 0 5px;
+}
+html[color-mode=light] .header__inner .logo {
+  color: #fff;
+}
+html[color-mode=light] .header__inner .logo:hover {
+  color: #0f05a0;
+  text-shadow: #af9862 1px 0 5px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }

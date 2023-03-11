@@ -62,8 +62,9 @@
 @import 'templates/section';
 
 // Components
+@import 'components/color_mode';
 @import 'components/hamburger';
 @import 'components/header';
 
 // Utilities
-
+@import 'utilities/sr-only';

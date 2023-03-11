@@ -4,8 +4,13 @@ body {
     font-family: $font-family-base;
     line-height: $line-height-base;
     background-color: $global-bg;
-    color: $text-color;
+    color: $color-white;
     overflow-x: hidden;
+
+    html[color-mode="light"] & {
+        background-color: $color-white;
+        color: $text-color;
+    }
 }
 
 button {

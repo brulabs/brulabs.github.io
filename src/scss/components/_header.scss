@@ -9,25 +9,29 @@
 
             display: inline-block;
             padding: to-rem(5px) to-rem(10px);
-            //font-size: to-rem(80px);
             font-weight: 500;
             font-style: normal;
             line-height: 1;
             text-align: center;
-            color: $global-bg;
             text-shadow: $highlight-color 1px 0 5px;
             transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
 
-            &:not(:hover) {
-                //animation: pulse-live-white 2s infinite;
+            html[color-mode="dark"] & {
+                color: $global-bg;
+
+                &:hover {
+                    color: $zueriblau;
+                    text-shadow: $color-white 1px 0 5px;
+                }
             }
 
-            &:hover {
-                color: $zueriblau;
-                //animation: pulse-live-highlight 2s infinite;
-                //text-shadow: $color-white 1px 0 10px;
+            html[color-mode="light"] & {
+                color: $color-white;
 
-                text-shadow: $color-white 1px 0 5px;
+                &:hover {
+                    color: $zueriblau;
+                    text-shadow: $highlight-color 1px 0 5px;
+                }
             }
         }
     }
