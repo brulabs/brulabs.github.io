@@ -1131,8 +1131,6 @@ html[color-mode=light] .logo:hover {
 }
 
 .scarecrow {
-  display: flex;
-  align-items: center;
   max-width: 38.25rem;
   margin-right: auto;
   margin-left: auto;
