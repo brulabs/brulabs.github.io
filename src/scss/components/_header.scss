@@ -1,38 +1,9 @@
 .header {
     &__inner {
-        display: flex;
-        justify-content: center;
         padding: to-rem(20px) 0;
 
-        .logo {
-            @include fluid-calc('font-size', (to-rem(60px), to-rem(120px)));
-
-            display: inline-block;
-            padding: to-rem(5px) to-rem(10px);
-            font-weight: 500;
-            font-style: normal;
-            line-height: 1;
+        @include mq(sm) {
             text-align: center;
-            text-shadow: $highlight-color 1px 0 5px;
-            transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
-
-            html[color-mode="dark"] & {
-                color: $global-bg;
-
-                &:hover {
-                    color: $zueriblau;
-                    text-shadow: $color-white 1px 0 5px;
-                }
-            }
-
-            html[color-mode="light"] & {
-                color: $color-white;
-
-                &:hover {
-                    color: $zueriblau;
-                    text-shadow: $highlight-color 1px 0 5px;
-                }
-            }
         }
     }
 }

@@ -3,12 +3,12 @@ body {
 
     font-family: $font-family-base;
     line-height: $line-height-base;
-    background-color: $global-bg;
+    background-color: $global-bg-dark;
     color: $color-white;
     overflow-x: hidden;
 
     html[color-mode="light"] & {
-        background-color: $color-white;
+        background-color:$global-bg-bright;
         color: $text-color;
     }
 }

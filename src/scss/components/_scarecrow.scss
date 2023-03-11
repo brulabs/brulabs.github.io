@@ -1,0 +1,29 @@
+.scarecrow {
+    display: flex;
+    align-items: center;
+    max-width: to-rem(612px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: to-rem(10px);
+    padding-left: to-rem(10px);
+    color: $global-bg-dark;
+    
+    html[color-mode="dark"] & {
+        color: $highlight-color;
+        animation: glow 4s infinite;
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.01;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0.01;
+    }
+}

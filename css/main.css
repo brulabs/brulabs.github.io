@@ -446,7 +446,7 @@ body {
   }
 }
 html[color-mode=light] body {
-  background-color: #fff;
+  background-color: #fafafa;
   color: #000;
 }
 
@@ -861,9 +861,19 @@ section[data-styles*=╤-g-lg] {
   cursor: pointer;
 }
 .color-mode svg {
-  width: 4rem;
+  width: 2rem;
   height: auto;
   color: #fff;
+}
+@media (min-width: 20em) {
+  .color-mode svg {
+    width: calc(2rem + 2 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .color-mode svg {
+    width: 4rem;
+  }
 }
 html[color-mode=light] .color-mode svg {
   color: #000;
@@ -1046,46 +1056,77 @@ html[color-mode=light] .color-mode svg {
 }
 
 .header__inner {
-  display: flex;
-  justify-content: center;
   padding: 1.25rem 0;
 }
-.header__inner .logo {
+@media (min-width: 23.4375em) {
+  .header__inner {
+    text-align: center;
+  }
+}
+
+.logo {
   font-size: 3.75rem;
   display: inline-block;
   padding: 0.3125rem 0.625rem;
   font-weight: 500;
   font-style: normal;
   line-height: 1;
-  text-align: center;
-  text-shadow: #af9862 1px 0 5px;
   transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 @media (min-width: 20em) {
-  .header__inner .logo {
+  .logo {
     font-size: calc(3.75rem + 3.75 * (100vw - 20rem) / 100);
   }
 }
 @media (min-width: 120em) {
-  .header__inner .logo {
+  .logo {
     font-size: 7.5rem;
   }
 }
-html[color-mode=dark] .header__inner .logo {
+html[color-mode=dark] .logo {
+  text-shadow: #af9862 1px 0 5px;
   color: #18181a;
 }
-html[color-mode=dark] .header__inner .logo:hover {
+html[color-mode=dark] .logo:hover {
   color: #0f05a0;
   text-shadow: #fff 1px 0 5px;
 }
-html[color-mode=light] .header__inner .logo {
-  color: #fff;
+html[color-mode=light] .logo {
+  visibility: hidden;
+  text-shadow: #0f05a0 1px 0 5px;
+  color: #fafafa;
 }
-html[color-mode=light] .header__inner .logo:hover {
+html[color-mode=light] .logo:hover {
   color: #0f05a0;
   text-shadow: #af9862 1px 0 5px;
 }
 
+.scarecrow {
+  display: flex;
+  align-items: center;
+  max-width: 38.25rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  color: #18181a;
+}
+html[color-mode=dark] .scarecrow {
+  color: #af9862;
+  animation: glow 4s infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.01;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.01;
+  }
+}
 .sr-only {
   position: absolute;
   width: 1px;
