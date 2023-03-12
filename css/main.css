@@ -445,7 +445,7 @@ body {
     font-size: 1.25rem;
   }
 }
-html[color-mode=light] body {
+html.light-mode body {
   background-color: #fafafa;
   color: #000;
 }
@@ -493,6 +493,8 @@ sup {
 
 svg {
   display: inline-block;
+  width: 100%;
+  height: auto;
 }
 
 u {
@@ -842,72 +844,6 @@ section[data-styles*=╤-g-lg] {
   }
 }
 
-/* Any element with the class "light--hidden" will be hidden when the site is set to Light Mode */
-:root[color-mode=light] .light--hidden {
-  display: none;
-}
-
-/* Any element with the class "dark--hidden" will be hidden when the site is set to Dark Mode */
-:root[color-mode=dark] .dark--hidden {
-  display: none;
-}
-
-.color-mode {
-  top: 1.625rem;
-  right: 0.625rem;
-  position: fixed;
-}
-@media (min-width: 20em) {
-  .color-mode {
-    top: calc(1.625rem + 0.5 * (100vw - 20rem) / 100);
-  }
-}
-@media (min-width: 120em) {
-  .color-mode {
-    top: 2.125rem;
-  }
-}
-@media (min-width: 20em) {
-  .color-mode {
-    right: calc(0.625rem + 1.5 * (100vw - 20rem) / 100);
-  }
-}
-@media (min-width: 120em) {
-  .color-mode {
-    right: 2.125rem;
-  }
-}
-.color-mode__btn {
-  cursor: pointer;
-}
-html[color-mode=dark] .color-mode__btn {
-  opacity: 0.4;
-  transition: opacity 0.3s ease-in-out;
-}
-html[color-mode=dark] .color-mode__btn:hover {
-  opacity: 1;
-}
-.color-mode svg {
-  width: 2rem;
-  height: auto;
-}
-@media (min-width: 20em) {
-  .color-mode svg {
-    width: calc(2rem + 2 * (100vw - 20rem) / 100);
-  }
-}
-@media (min-width: 120em) {
-  .color-mode svg {
-    width: 4rem;
-  }
-}
-html[color-mode=dark] .color-mode svg {
-  color: #af9862;
-}
-html[color-mode=light] .color-mode svg {
-  color: #000;
-}
-
 .btn1 {
   position: relative;
   z-index: 999;
@@ -1084,28 +1020,62 @@ html[color-mode=light] .color-mode svg {
   transform: translate(-60%, -30%);
 }
 
-.header__inner {
-  padding: 1.25rem 0;
+.header {
+  padding-top: 0.9375rem;
 }
-@media (min-width: 23.4375em) {
+@media (min-width: 20em) {
+  .header {
+    padding-top: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .header {
+    padding-top: 1.875rem;
+  }
+}
+.header__container {
+  max-width: 1024px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.header__inner {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  text-align: center;
+}
+@media (min-width: 20em) {
   .header__inner {
-    text-align: center;
+    padding-right: calc(0.9375rem + 2.8125 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .header__inner {
+    padding-right: 3.75rem;
+  }
+}
+@media (min-width: 20em) {
+  .header__inner {
+    padding-left: calc(0.9375rem + 2.8125 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .header__inner {
+    padding-left: 3.75rem;
   }
 }
 
 .logo {
-  font-size: 3.75rem;
+  font-size: 3.125rem;
   display: inline-block;
-  padding: 0 0.625rem;
   font-weight: 500;
   font-style: normal;
   line-height: 1;
   transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
-  pointer-events: none;
+  cursor: pointer;
 }
 @media (min-width: 20em) {
   .logo {
-    font-size: calc(3.75rem + 3.75 * (100vw - 20rem) / 100);
+    font-size: calc(3.125rem + 4.375 * (100vw - 20rem) / 100);
   }
 }
 @media (min-width: 120em) {
@@ -1113,33 +1083,86 @@ html[color-mode=light] .color-mode svg {
     font-size: 7.5rem;
   }
 }
-html[color-mode=dark] .logo {
+html.dark-mode .logo {
   text-shadow: #af9862 1px 0 6px;
   color: #18181a;
 }
-html[color-mode=dark] .logo:hover {
-  color: #0f05a0;
-  text-shadow: #fff 1px 0 5px;
+html.dark-mode .logo:hover {
+  text-shadow: #fff 1px 0 6px;
+  color: #18181a;
 }
-html[color-mode=light] .logo {
+html.light-mode .logo {
   text-shadow: #18181a 1px 0 6px;
   color: #18181a;
 }
-html[color-mode=light] .logo:hover {
-  color: #0f05a0;
-  text-shadow: #af9862 1px 0 5px;
+html.light-mode .logo:hover {
+  text-shadow: #18181a 1px 0 6px;
+  color: #18181a;
 }
 
 .scarecrow {
-  max-width: 38.25rem;
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  height: calc(var(--vh) * 100 - var(--hh));
   margin-right: auto;
   margin-left: auto;
-  padding-top: 2.5rem;
-  padding-right: 0.625rem;
-  padding-left: 0.625rem;
   color: #18181a;
 }
-html[color-mode=dark] .scarecrow {
+.scarecrow svg {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 20em) {
+  .scarecrow svg {
+    padding-right: calc(0.9375rem + 2.8125 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .scarecrow svg {
+    padding-right: 3.75rem;
+  }
+}
+@media (min-width: 20em) {
+  .scarecrow svg {
+    padding-left: calc(0.9375rem + 2.8125 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .scarecrow svg {
+    padding-left: 3.75rem;
+  }
+}
+@media (min-width: 20em) {
+  .scarecrow svg {
+    padding-top: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .scarecrow svg {
+    padding-top: 1.875rem;
+  }
+}
+@media (min-width: 20em) {
+  .scarecrow svg {
+    padding-bottom: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .scarecrow svg {
+    padding-bottom: 1.875rem;
+  }
+}
+html.dark-mode .scarecrow {
   color: #af9862;
   animation: glow 4s infinite;
 }
@@ -1149,7 +1172,7 @@ html[color-mode=dark] .scarecrow {
     opacity: 0;
   }
   50% {
-    opacity: 0.05;
+    opacity: 0.02;
   }
   100% {
     opacity: 0;

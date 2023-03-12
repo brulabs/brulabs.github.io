@@ -2,20 +2,19 @@
 let lastScroll = 0;
 
 //=include partials/custom-properties.js
-//=include partials/toggle-color-mode.js
-
+//=include partials/toggle-mode.js
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    document.getElementById('burger').addEventListener('click', function() {
-        this.classList.toggle('open');
+    //document.getElementById('burger').addEventListener('click', function() {
+    //    this.classList.toggle('open');
+    //
+    //    document.getElementById("nav").classList.toggle("change");
+    //    document.getElementById("menu-bg").classList.toggle("change-bg");
+    //});
 
-        document.getElementById("nav").classList.toggle("change");
-        document.getElementById("menu-bg").classList.toggle("change-bg");
-    });
+    //CustomProperties.init();
 
-    CustomProperties.init();
-    CustomProperties.update();
 
 
 
@@ -100,3 +99,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //    document.body.classList.toggle('dark-mode');
     //});
 });
+
+window.onresize = function(event) {
+    CustomProperties.update();
+};

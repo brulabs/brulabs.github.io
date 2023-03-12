@@ -1,9 +1,15 @@
 .header {
-    &__inner {
-        padding: to-rem(20px) 0;
+    @include fluid-calc('padding-top', (to-rem(15px), to-rem(30px)));
 
-        @include mq(sm) {
-            text-align: center;
-        }
+    &__container {
+        max-width: map-get($breakpoints, lg);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__inner {
+        @include lateral-spacing;
+
+        text-align: center;
     }
 }

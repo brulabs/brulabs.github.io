@@ -1,32 +1,30 @@
 .logo {
-    @include fluid-calc('font-size', (to-rem(60px), to-rem(120px)));
+    @include fluid-calc('font-size', (to-rem(50px), to-rem(120px)));
 
     display: inline-block;
-    padding: 0 to-rem(10px);
     font-weight: 500;
     font-style: normal;
     line-height: 1;
     transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
 
-    pointer-events: none; //todo: delete later
-
-    html[color-mode="dark"] & {
+    html.dark-mode & {
         text-shadow: $highlight-color 1px 0 6px;
         color: $global-bg-dark;
 
         &:hover {
-            color: $zueriblau;
-            text-shadow: $color-white 1px 0 5px;
+            text-shadow: $color-white 1px 0 6px;
+            color: $global-bg-dark;
         }
     }
 
-    html[color-mode="light"] & {
+    html.light-mode & {
         text-shadow: $global-bg-dark 1px 0 6px;
         color: $global-bg-dark;
 
         &:hover {
-            color: $zueriblau;
-            text-shadow: $highlight-color 1px 0 5px;
+            text-shadow: $global-bg-dark 1px 0 6px;
+            color: $global-bg-dark;
         }
     }
 }

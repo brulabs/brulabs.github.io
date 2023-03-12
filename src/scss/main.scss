@@ -39,6 +39,7 @@
 @import 'tools/mixin/calc';
 @import 'tools/mixin/cover';
 @import 'tools/mixin/fade';
+@import 'tools/mixin/lateral-spacing';
 @import 'tools/mixin/list';
 @import 'tools/mixin/scrollbar';
 @import 'tools/mixin/sr-only';
@@ -62,7 +63,6 @@
 @import 'templates/section';
 
 // Components
-@import 'components/color_mode';
 @import 'components/hamburger';
 @import 'components/header';
 @import 'components/logo';

@@ -7,7 +7,7 @@ body {
     color: $color-white;
     overflow-x: hidden;
 
-    html[color-mode="light"] & {
+    html.light-mode & {
         background-color:$global-bg-bright;
         color: $text-color;
     }
@@ -53,6 +53,8 @@ sup {
 
 svg {
     display: inline-block;
+    width: 100%;
+    height: auto;
 }
 
 u {

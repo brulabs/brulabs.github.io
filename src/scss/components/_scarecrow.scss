@@ -1,13 +1,26 @@
 .scarecrow {
-    max-width: to-rem(612px);
+    position: relative;
+    width: 100%;
+    max-width: map-get($breakpoints, lg);
+    height: calc((var(--vh) * 100) - var(--hh));
     margin-right: auto;
     margin-left: auto;
-    padding-top: to-rem(40px);
-    padding-right: to-rem(10px);
-    padding-left: to-rem(10px);
     color: $global-bg-dark;
+
+    svg {
+        @include lateral-spacing;
+        @include fluid-calc('padding-top', (to-rem(15px), to-rem(30px)));
+        @include fluid-calc('padding-bottom', (to-rem(15px), to-rem(30px)));
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
     
-    html[color-mode="dark"] & {
+    html.dark-mode & {
         color: $highlight-color;
         animation: glow 4s infinite;
     }
@@ -19,7 +32,7 @@
     }
 
     50% {
-        opacity: 0.05;
+        opacity: 0.02;
     }
 
     100% {
