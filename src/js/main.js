@@ -3,6 +3,7 @@ let lastScroll = 0;
 
 //=include partials/custom-properties.js
 //=include partials/toggle-mode.js
+//=include partials/burger.js
 
 document.addEventListener("DOMContentLoaded", function(event) {
 

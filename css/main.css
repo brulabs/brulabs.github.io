@@ -844,13 +844,64 @@ section[data-styles*=╤-g-lg] {
   }
 }
 
+.burger {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  width: 3.125rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+.burger .bar::before, .burger .bar::after {
+  content: "";
+  position: absolute;
+  transition-duration: 0.3s;
+  background-color: red;
+  width: 1.5625rem;
+  height: 0.25rem;
+}
+.burger .bar:first-child {
+  transition-duration: 0.3s;
+  position: absolute;
+  height: 0.25rem;
+  width: 1.5625rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red;
+  left: 0;
+}
+.burger .bar:first-child::before {
+  top: -1.0416666667rem;
+  left: 0;
+}
+.burger .bar:first-child::after {
+  top: 1.0416666667rem;
+  left: 0;
+}
+.burger .bar:last-child {
+  transition-duration: 0.3s;
+  position: absolute;
+  height: 0.25rem;
+  width: 1.5625rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: red;
+  left: 1.5625rem;
+}
+.burger .bar:last-child::before {
+  top: -1.0416666667rem;
+  left: 0;
+}
+.burger .bar:last-child::after {
+  top: 1.0416666667rem;
+  left: 0;
+}
+
 .btn1 {
   position: relative;
   z-index: 999;
   width: 60px;
   height: 60px;
-  top: 0;
-  left: 0px;
   transition-duration: 0.5s;
 }
 
@@ -1020,6 +1071,12 @@ section[data-styles*=╤-g-lg] {
   transform: translate(-60%, -30%);
 }
 
+.menu {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
 .header {
   padding-top: 0.9375rem;
 }
@@ -1066,11 +1123,11 @@ section[data-styles*=╤-g-lg] {
 
 .logo {
   font-size: 3.125rem;
+  position: relative;
   display: inline-block;
   font-weight: 500;
   font-style: normal;
   line-height: 1;
-  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
   cursor: pointer;
 }
 @media (min-width: 20em) {
@@ -1083,8 +1140,20 @@ section[data-styles*=╤-g-lg] {
     font-size: 7.5rem;
   }
 }
+.logo::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  width: 70%;
+  height: 0;
+  transform: translateX(-50%);
+  animation: pulse 2s infinite;
+  overflow: hidden;
+}
 html.dark-mode .logo {
-  text-shadow: #af9862 1px 0 6px;
+  text-shadow: #fff 1px 0 6px;
   color: #18181a;
 }
 html.dark-mode .logo:hover {
@@ -1093,13 +1162,24 @@ html.dark-mode .logo:hover {
 }
 html.light-mode .logo {
   text-shadow: #18181a 1px 0 6px;
-  color: #18181a;
+  color: #fff;
 }
 html.light-mode .logo:hover {
   text-shadow: #18181a 1px 0 6px;
-  color: #18181a;
+  color: #fff;
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 0.8em rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
 .scarecrow {
   position: relative;
   width: 100%;

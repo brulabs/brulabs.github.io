@@ -1,15 +1,29 @@
 .logo {
     @include fluid-calc('font-size', (to-rem(50px), to-rem(120px)));
 
+    position: relative;
     display: inline-block;
     font-weight: 500;
     font-style: normal;
     line-height: 1;
-    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
     cursor: pointer;
 
+    &::before {
+        //content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        display: block;
+        width: 70%;
+        height: 0;
+        transform: translateX(-50%);
+        animation: pulse 2s infinite;
+        overflow: hidden;
+    }
+
     html.dark-mode & {
-        text-shadow: $highlight-color 1px 0 6px;
+        text-shadow: $color-white 1px 0 6px;
         color: $global-bg-dark;
 
         &:hover {
@@ -20,11 +34,25 @@
 
     html.light-mode & {
         text-shadow: $global-bg-dark 1px 0 6px;
-        color: $global-bg-dark;
+        color: $color-white;
 
         &:hover {
             text-shadow: $global-bg-dark 1px 0 6px;
-            color: $global-bg-dark;
+            color: $color-white;
         }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(black, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 0.8em rgba(black, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(black, 0);
     }
 }

@@ -1,0 +1,109 @@
+@use 'sass:math';
+
+$burger-size: to-rem(50px);
+$bar-height: to-rem(4px);
+$bar-color: red;
+$transition-duration: 0.3s;
+
+.burger {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    width: $burger-size;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    //height: 60px;
+    //background-color: deeppink;
+
+    .inner {
+        //display: block;
+        //width: 100%;
+        //height: 100%;
+
+        //background-color: rebeccapurple;
+    }
+
+    .bar {
+        //display: block;
+    }
+
+    .bar::before, .bar::after {
+        content: '';
+        position: absolute;
+        transition-duration: $transition-duration;
+        background-color: $bar-color;
+        width: math.div($burger-size, 2);
+        height: $bar-height;
+    }
+
+    .bar:first-child {
+        transition-duration: $transition-duration;
+        position: absolute;
+        height: $bar-height;
+        width: math.div($burger-size, 2);
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $bar-color;
+        left: 0;
+
+        &::before {
+            //transition-duration: 0.5s;
+            //position: absolute;
+            //width: 30px;
+            //height: 8px;
+            //background-color: #212121;
+            //content: "";
+            //top: -20px;
+            //top: math.percentage(math.div(1,3));
+            top: math.div(-$burger-size, 3);
+            left: 0;
+        }
+
+        &::after {
+            //transition-duration: 0.5s;
+            //position: absolute;
+            //width: 30px;
+            //height: 8px;
+            //background-color: #212121;
+            //content: "";
+            //top: 20px;
+            top: math.div($burger-size, 3);
+            left: 0;
+        }
+    }
+
+    .bar:last-child {
+        transition-duration: $transition-duration;
+        position: absolute;
+        height: $bar-height;
+        width: math.div($burger-size, 2);
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $bar-color;
+        left: math.div($burger-size, 2);
+
+        &::before {
+            //transition-duration: 0.5s;
+            //position: absolute;
+            //width: 30px;
+            //height: 8px;
+            //background-color: #212121;
+            //content: "";
+            //top: -20px;
+            top: math.div(-$burger-size, 3);
+            left: 0;
+        }
+
+        &::after {
+            //transition-duration: 0.5s;
+            //position: absolute;
+            //width: 30px;
+            //height: 8px;
+            //background-color: #212121;
+            //content: "";
+            //top: 20px;
+            top: math.div($burger-size, 3);
+            left: 0;
+        }
+    }
+}
