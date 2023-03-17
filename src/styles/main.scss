@@ -16,19 +16,19 @@
 // Settings
 @import 'settings/breakpoint';
 @import 'settings/colors';
-@import 'settings/delicious-hamburgers';
-@import 'settings/easings';
+//@import 'settings/delicious-hamburgers';
+//@import 'settings/easings';
 @import 'settings/fonts';
-@import 'settings/form';
+//@import 'settings/form';
 @import 'settings/gaps';
-@import 'settings/grid';
+//@import 'settings/grid';
 @import 'settings/heading';
 @import 'settings/icons';
-@import 'settings/navigation';
-@import 'settings/pusha';
-@import 'settings/ratios';
-@import 'settings/spacing';
-@import 'settings/table';
+//@import 'settings/navigation';
+//@import 'settings/pusha';
+//@import 'settings/ratios';
+//@import 'settings/spacing';
+//@import 'settings/table';
 @import 'settings/typography';
 
 // Tools - keyframes
@@ -47,6 +47,7 @@
 @import 'tools/mixin/underline';
 
 // Templates
+@import 'templates/page';
 @import 'templates/section';
 
 // Atoms
@@ -60,3 +61,5 @@
 
 // Utilities
 @import 'utilities/sr-only';
+
+

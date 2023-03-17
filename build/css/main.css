@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.c-hamburger {
-  color: green;
-}
-
 @font-face {
   font-family: "ibm-plex-sans";
   font-style: normal;
@@ -149,6 +145,29 @@
     Usage example:
     body { @include fluid-calc('font-size', (1rem, 1.25rem), (min: 400px, max: 960px)); }
  */
+.page {
+  font-size: 1rem;
+  font-family: "ibm-plex-sans", Courier New, sans-serif;
+  line-height: 1.4;
+  background-color: #18181a;
+  color: #fff;
+  overflow-x: hidden;
+}
+@media (min-width: 20em) {
+  .page {
+    font-size: calc(1rem + 0.25 * (100vw - 20rem) / 100);
+  }
+}
+@media (min-width: 120em) {
+  .page {
+    font-size: 1.25rem;
+  }
+}
+.light-mode .page {
+  background-color: #fafafa;
+  color: #000;
+}
+
 section {
   position: relative;
   display: flex;
@@ -301,6 +320,10 @@ section[data-styles*=╤-g-lg] {
 }
 
 .burger {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
   position: absolute;
   right: 15px;
   bottom: 15px;
@@ -370,6 +393,10 @@ section[data-styles*=╤-g-lg] {
 }
 
 .logo {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
   font-size: 3.125rem;
   position: relative;
   display: inline-block;

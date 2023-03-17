@@ -1,4 +1,5 @@
 .logo {
+    @include button-unstyled;
     @include fluid-calc('font-size', (to-rem(50px), to-rem(120px)));
 
     position: relative;
