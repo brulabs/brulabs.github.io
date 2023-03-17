@@ -23,3 +23,6 @@ https://www.lookuptables.com/text/extended-ascii-table
 ## Dark mode toggle
 
 [Complete Guide](https://ryanfeigenbaum.com/dark-mode/)
+
+## Index in build folder
+[Dummy index.html](https://stackoverflow.com/questions/25320356/can-i-have-my-github-pages-index-html-in-a-subfolder-of-the-repository)
