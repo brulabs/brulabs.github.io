@@ -856,18 +856,18 @@ section[data-styles*=╤-g-lg] {
   content: "";
   position: absolute;
   transition-duration: 0.3s;
-  background-color: red;
+  background-color: #18181a;
   width: 1.5625rem;
-  height: 0.25rem;
+  height: 0.1875rem;
 }
 .burger .bar:first-child {
   transition-duration: 0.3s;
   position: absolute;
-  height: 0.25rem;
+  height: 0.1875rem;
   width: 1.5625rem;
   top: 50%;
   transform: translateY(-50%);
-  background-color: red;
+  background-color: #18181a;
   left: 0;
 }
 .burger .bar:first-child::before {
@@ -881,11 +881,11 @@ section[data-styles*=╤-g-lg] {
 .burger .bar:last-child {
   transition-duration: 0.3s;
   position: absolute;
-  height: 0.25rem;
+  height: 0.1875rem;
   width: 1.5625rem;
   top: 50%;
   transform: translateY(-50%);
-  background-color: red;
+  background-color: #18181a;
   left: 1.5625rem;
 }
 .burger .bar:last-child::before {
@@ -895,6 +895,22 @@ section[data-styles*=╤-g-lg] {
 .burger .bar:last-child::after {
   top: 1.0416666667rem;
   left: 0;
+}
+.burger.is-open .bar {
+  transition-duration: 0.3s;
+  background-color: transparent;
+}
+.burger.is-open .bar:first-child::before {
+  transform: rotateZ(45deg) scaleX(1.4) translate(0.1875rem, 0.1875rem);
+}
+.burger.is-open .bar:first-child::after {
+  transform: rotateZ(-45deg) scaleX(1.4) translate(0.1875rem, -0.1875rem);
+}
+.burger.is-open .bar:last-child::before {
+  transform: rotateZ(-45deg) scaleX(1.4) translate(-0.1875rem, 0.1875rem);
+}
+.burger.is-open .bar:last-child::after {
+  transform: rotateZ(45deg) scaleX(1.4) translate(-0.1875rem, -0.1875rem);
 }
 
 .btn1 {
