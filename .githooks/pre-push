@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "Copying assets to build folder..."
-#rsync -r assets/ build/assets --delete
-echo "Copying assets finished"
