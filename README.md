@@ -1,11 +1,17 @@
-## How to force GitHub Pages build
+# README :)
 
-[How to](https://stackoverflow.com/questions/24098792/how-to-force-github-pages-build)
+## Aufbau
+
+Prototyp im _dev Ordner. Dateien werden vom src in den build Ordner kompiliert. Mit dem 
+
+## How to force GitHub Pages build
 
 ```shell
 git commit -m 'rebuild pages' --allow-empty
 git push origin <branch-name>
 ```
+
+[Read article](https://stackoverflow.com/questions/24098792/how-to-force-github-pages-build)
 
 ## Hamburger menu
 
@@ -25,4 +31,5 @@ https://www.lookuptables.com/text/extended-ascii-table
 [Complete Guide](https://ryanfeigenbaum.com/dark-mode/)
 
 ## Index in build folder
+
 [Dummy index.html](https://stackoverflow.com/questions/25320356/can-i-have-my-github-pages-index-html-in-a-subfolder-of-the-repository)

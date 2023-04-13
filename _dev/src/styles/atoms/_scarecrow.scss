@@ -7,8 +7,15 @@
     margin-left: auto;
     color: $global-bg-dark;
 
+    &__inner {
+        @include fluid-calc('margin-right', (to-rem(15px), to-rem(60px)));
+        @include fluid-calc('margin-left', (to-rem(15px), to-rem(60px)));
+
+        position: relative;
+        height: 100%;
+    }
+
     svg {
-        @include lateral-spacing;
         @include fluid-calc('padding-top', (to-rem(15px), to-rem(30px)));
         @include fluid-calc('padding-bottom', (to-rem(15px), to-rem(30px)));
 

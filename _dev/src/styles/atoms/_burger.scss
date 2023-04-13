@@ -66,7 +66,7 @@ $transition-duration: 0.3s;
         }
     }
 
-    &.is-open {
+    &.is-active {
         .bar {
             transition-duration: $transition-duration;
             background-color: transparent;

@@ -18,3 +18,13 @@
 
 # Package manager folders
 node_modules
+
+# Build folder
+build
+
+# Live folders
+Css
+Fonts
+Icons
+Images
+Javascript
