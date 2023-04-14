@@ -1,3 +1,6 @@
+@use "../tools/mixins/button/button-unstyled" as *;
+@use "../tools/functions/to-rem" as *;
+@use "../settings/colors" as *;
 @use 'sass:math';
 
 $burger-size: to-rem(50px);
@@ -87,5 +90,9 @@ $transition-duration: 0.3s;
         .bar:last-child::after {
             transform: rotateZ(45deg) scaleX(1.4) translate(-$bar-height, -$bar-height);
         }
+    }
+
+    html.dark-mode & {
+        pointer-events: none;
     }
 }

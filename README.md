@@ -4,6 +4,11 @@
 
 Prototyp im _dev Ordner. Dateien werden vom src in den build Ordner kompiliert. Mit dem 
 
+## Dreieck
+
+[Generator](https://www.cssportal.com/css-clip-path-generator/)
+[How do](https://www.coding-dude.com/wp/css/create-a-triangle/)
+
 ## How to force GitHub Pages build
 
 ```shell
