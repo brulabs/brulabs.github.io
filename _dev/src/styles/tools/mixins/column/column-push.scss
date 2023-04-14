@@ -1,0 +1,10 @@
+@use "../../../settings/grid" as *;
+@use "sass:math";
+
+@mixin column-push($size, $columns: $grid-columns) {
+    @if $size > 0 {
+        left: percentage(math.div($size, $columns));
+    } @else {
+        left: auto;
+    }
+}

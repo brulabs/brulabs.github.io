@@ -1,0 +1,15 @@
+@use '../../../../../node_modules/sass-mq/mq' as sass-mq;
+@use "../../functions/to-rem" as *;
+@use "../../../settings/breakpoints" as *;
+
+@mixin loop-headings($size) {
+    $max-scale: 0;
+
+    @each $heading in $headings {
+        #{$heading} {
+            font-size: to-rem(modular-scale($max-scale, $size));
+        }
+
+        $max-scale: $max-scale + 1;
+    }
+}

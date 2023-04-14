@@ -1,0 +1,34 @@
+@use "../tools/functions/to-rem" as *;
+@use "../tools/mixins/list/list-unstyled" as *;
+@use "../settings/colors" as *;
+
+ul {
+    @include list-unstyled();
+}
+
+ul:not([class]) {
+    .c-richtext & {
+        padding-left: to-rem(30px);
+
+        li {
+            position: relative;
+
+            &:not(:last-child) {
+                margin-bottom: to-rem(5px);
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: to-rem(-30px);
+                display: inline-block;
+                width: to-rem(8px);
+                height: to-rem(8px);
+                margin-top: to-rem(7px);
+                background-image: url(get-icon('radio', $primary-color));
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}

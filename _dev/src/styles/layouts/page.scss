@@ -1,0 +1,19 @@
+@use "../tools/mixins/fluid-calc" as *;
+@use "../tools/functions/to-rem" as *;
+@use "../settings/colors" as *;
+@use "../settings/typography" as *;
+
+.page {
+    @include fluid-calc('font-size', (to-rem(16px), to-rem(20px)));
+
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    background-color: $global-bg-dark;
+    color: $color-white;
+    overflow-x: hidden;
+
+    .light-mode & {
+        background-color:$global-bg-bright;
+        color: $text-color;
+    }
+}

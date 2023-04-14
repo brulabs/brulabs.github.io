@@ -1,0 +1,30 @@
+@use "../../settings/easings" as *;
+
+@mixin image-transform($duration: 1s, $transitionTiming: $easeImage) {
+    position: relative;
+
+    img,
+    svg {
+        will-change: transform;
+        transition: transform $duration $transitionTiming;
+    }
+
+    &:hover {
+        img,
+        svg {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+    &:focus-visible {
+        img,
+        svg {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+    &:focus-within {
+        img,
+        svg {
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}

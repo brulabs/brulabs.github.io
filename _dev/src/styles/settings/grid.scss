@@ -1,0 +1,12 @@
+@use "../tools/functions/to-rem" as *;
+@use "breakpoints" as *;
+
+$grid-columns: 12;
+$grid-gutter: 36px;
+$grid-gutter-mobile: to-rem(15px);
+$grid-container: map-get($breakpoints, xl);
+$grid-container-gutter: $grid-gutter;
+$grid-container-gutter-mobile: $grid-gutter-mobile;
+$grid-pull-classes: true;
+$grid-push-classes: true;
+$grid-offset-classes: true;

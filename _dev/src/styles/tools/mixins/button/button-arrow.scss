@@ -1,0 +1,49 @@
+@use "../../../settings/colors" as *;
+@use "../../../settings/easings" as *;
+@use "sass:math";
+
+@mixin button-arrow($icon: 'arrow', $icon-color: $color-black, $icon-size: 10px, $duration: 0.4s, $ease: linear, $rotate: 180deg, $button-padding-vertical: 0.375em, $button-padding-horizontal: 1.2em) {
+    position: relative;
+    display: inline-block;
+    padding-left: calc(#{$button-padding-horizontal} + #{$transform});
+    padding-right: calc(#{$button-padding-horizontal} + #{$transform});
+    $transform: math.div($icon-size, 2);
+
+    span {
+        display: flex;
+        transform: translateX(0);
+        transition: transform $duration $ease;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: calc(#{$button-padding-horizontal} - 2px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $icon-size;
+        height: 100%;
+        content: "";
+        background-image: url(get-icon(#{$icon}, $icon-color));
+        background-size: $icon-size;
+        background-repeat: no-repeat;
+        background-position: center center;
+        opacity: 0;
+        transform: rotate(#{$rotate});
+        transition: all $duration $ease;
+    }
+
+    &:hover {
+        span {
+            transform: translateX(-#{$transform + 2px});
+            transition: transform $duration $ease;
+        }
+
+        &::after {
+            opacity: 1;
+            transform: rotate(#{$rotate});
+            transition: all $duration $ease;
+        }
+    }
+}

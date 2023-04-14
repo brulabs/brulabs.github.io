@@ -1,0 +1,369 @@
+@use "sass:math";
+
+@mixin navigation-header(
+    $navroot: $root,
+    $navigation-link-color: $color-black,
+    $navigation-link-color-hover: $color-dark-gray,
+    $navigation-background-color: $color-light-gray,
+    $navigation-ease: $easeInSine,
+    $navigation-duration: .35s,
+    $navigation-delay: .2s,
+    $navigation-font-size: to-rem(20px),
+    $navigation-font-size-sub: to-rem(18px),
+    $navigation-padding: to-rem(5px),
+    $navigation-padding-sub: to-rem(5px),
+    $navigation-border-bottom: 1px,
+    $navigation-border-bottom-sub: 1px
+) {
+    #{$navroot}__list {
+        @include list-unstyled();
+
+        display: flex;
+
+        & li {
+            display: flex;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+
+            #{$navroot}__link {
+                @include button-unstyled;
+                @include underline($distance: 1px, $width: 0%);
+
+                svg {
+                    transform: rotate(90deg);
+                    transition: transform $navigation-duration $navigation-ease;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $navigation-link-color-hover;
+                    @include animated-underline($width: 100%);
+                }
+            }
+
+            &.is-active,
+            &.has-activeitem {
+                #{$navroot}__link {
+                    color: $navigation-link-color-hover;
+                    @include underline($distance: 1px, $width: 100%);
+
+                    svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+
+            &.has-sub {
+                #{$navroot}__sub {
+                    position: absolute;
+                    background-color: $navigation-background-color;
+                    left: 0;
+                    width: 100vw;
+                    overflow: hidden;
+                    z-index: 200;
+                    padding: 100px 0;
+                    bottom: 0;
+                    opacity: 0;
+                    display: none;
+                    transform: translateY(-100%);
+                    transition: opacity .55s $easeInCubic, transform .2s $easeInCubic .45s;
+
+                    > div {
+                        @include container;
+
+                        display: flex;
+                        margin: 0 auto;
+                        position: relative;
+                    }
+
+                    #{$navroot}__sub-title {
+                        flex: 0 0 33.333%;
+                        color: $navigation-link-color;
+                    }
+
+                    #{$navroot}__list {
+                        padding: 0 math.div($grid-gutter, 2);
+                        flex: 0 0 33.333%;
+                        display: flex;
+                        flex-direction: column;
+
+                        li {
+                            border-bottom: 1px solid $navigation-link-color;
+                            display: flex;
+                            padding: 15px 0;
+
+                            &:first-child {
+                                padding-top: 0;
+                            }
+
+                            &.has-sub {
+                                #{$navroot}__link {
+                                    text-align: left;
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    svg {
+                                        transform: rotate(0deg);
+                                    }
+                                }
+
+                                &.is-active {
+                                    #{$navroot}__subsub {
+                                        opacity: 1;
+                                        pointer-events: initial;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    #{$navroot}__link {
+                        width: 100%;
+                        background-image: none;
+                        font-style: normal;
+                        color: $navigation-link-color;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $navigation-link-color-hover;
+                            background-image: none;
+                        }
+                    }
+
+                    .is-active {
+                        #{$navroot}__link {
+                            color: $navigation-link-color-hover;
+                        }
+                    }
+
+                    #{$navroot}__subsub {
+                        position: absolute;
+                        top: 0;
+                        bottom: auto;
+                        right: 0;
+                        width: 33.3333333333%;
+                        height: 100%;
+                        left: auto;
+                        transform: none;
+                        opacity: 0;
+                        pointer-events: none;
+
+                        #{$navroot}__list {
+                            flex: 0 0 33.333%;
+                            display: flex;
+                            flex-direction: column;
+
+                            #{$navroot}__link {
+                                color: $navigation-link-color;
+
+                                &:hover,
+                                &:focus,
+                                &:active {
+                                    color: $navigation-link-color-hover;
+                                    background-image: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.is-active {
+                    #{$navroot}__sub {
+                        bottom: 0;
+                        transform: translateY(100%);
+                        opacity: 1;
+                        display: block;
+                        transition: opacity .55s $easeInCubic, transform .2s $easeInCubic .45s;
+                    }
+                }
+            }
+        }
+
+        &[data-level="1"] {
+            > li {
+                padding: 0 $navigation-padding;
+            }
+        }
+    }
+}
+
+@mixin navigation-panel(
+    $navroot: $root,
+    $navigation-link-color: $color-black,
+    $navigation-link-color-hover: $color-dark-gray,
+    $navigation-background-color: $color-light-gray,
+    $navigation-ease: $easeInSine,
+    $navigation-duration: .35s,
+    $navigation-delay: .2s,
+    $navigation-font-size: to-rem(20px),
+    $navigation-font-size-sub: to-rem(18px),
+    $navigation-padding: to-rem(10px),
+    $navigation-padding-sub: to-rem(10px),
+    $navigation-border-bottom: 1px,
+    $navigation-border-bottom-sub: 1px
+) {
+
+    padding-bottom: 2rem;
+    width: 100%;
+    opacity: 0;
+    transition: opacity $navigation-duration $navigation-ease $navigation-delay;
+
+    #{$navroot}__link {
+        @include button-unstyled;
+
+        display: flex;
+        align-items: center;
+        width: 100%;
+        color: $navigation-link-color;
+
+        svg {
+            margin-left: to-rem(25px);
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $navigation-link-color-hover;
+
+            svg path {
+                stroke: $navigation-link-color-hover;
+            }
+        }
+    }
+
+    .is-active > #{$navroot}__link,
+    .has-activeitem > #{$navroot}__link {
+        color: $navigation-link-color-hover;
+    }
+
+    #{$navroot}__list {
+        @include list-unstyled();
+
+        position: relative;
+        z-index: 999999;
+        display: flex;
+        flex-direction: column;
+
+
+        li {
+            padding: 0;
+            border-bottom: $navigation-border-bottom solid $navigation-link-color;
+        }
+
+        #{$navroot}__link {
+            @include fluid-calc('font-size', (to-rem(35px), to-rem(68px)));
+        }
+    }
+
+    #{$navroot}__sub, #{$navroot}__subsub {
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform $navigation-duration $navigation-ease;
+        width: 100%;
+        background-color: $navigation-background-color;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100vw;
+            height: 7rem;
+            bottom: 0rem;
+            left: 0;
+            pointer-events: none;
+            background: linear-gradient(0deg, $primary-color 14%, rgba($primary-color, 0) 100%);
+        }
+
+        > div {
+            height: 100vh;
+            background-color: $primary-color;
+            overflow: scroll;
+            padding-top: to-rem(10px);
+            padding-bottom: 3rem;
+            width: 100%;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        #{$navroot}__list {
+            width: auto;
+            padding-bottom: 3rem;
+
+            #{$navroot}__link {
+                color: $secondary-color;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $navigation-link-color-hover;
+                }
+            }
+
+            li {
+                border-bottom: $navigation-border-bottom-sub solid $navigation-link-color;
+                padding: $navigation-padding-sub 0;
+            }
+        }
+    }
+
+    #{$navroot}__back {
+        @include button-unstyled;
+
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 40px;
+        align-items: center;
+
+        span {
+            color: $color-white;
+            padding-left: to-rem(28px);
+        }
+    }
+
+    .has-sub.is-active {
+        #{$navroot}__sub {
+            transform: translateX(0%);
+            transition: transform $navigation-duration $easeInOutCubic;
+            z-index: 200;
+            visibility: visible;
+
+            li.is-active {
+                #{$navroot}__link {
+                    color: $navigation-link-color-hover;
+                }
+            }
+
+            .has-sub.is-active {
+                #{$navroot}__subsub {
+                    transform: translateX(0%);
+                    transition: transform $navigation-duration $easeInOutCubic;
+                    z-index: 200;
+                    visibility: visible;
+
+                    li.is-active {
+                        #{$navroot}__link {
+                            color: $navigation-link-color-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pusha-panel--active & {
+        opacity: 1;
+    }
+}

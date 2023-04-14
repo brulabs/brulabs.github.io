@@ -1,0 +1,15 @@
+@use "loop/loop-headings" as *;
+@use "../../settings/headings" as *;
+@use "../../settings/type-scale" as *;
+
+@mixin scale-headings($scale: $type-scale-base, $headings: $headings) {
+    @if (type-of($scale) == 'map') {
+        @each $breakpoint, $size in $scale {
+            @include mq($breakpoint) {
+                @include loop-headings($size);
+            }
+        }
+    } @else {
+        @include loop-headings($scale);
+    }
+}

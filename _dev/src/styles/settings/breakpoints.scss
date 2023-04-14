@@ -1,0 +1,21 @@
+@use "../tools/functions/serialize-breakpoints" as *;
+
+// Breakpoints: https://devfacts.com/media-queries-breakpoints-2022/
+$breakpoints: (
+    xs: 320px, // iPhone SE
+    sm: 375px, // iPhone 6 to X
+    md: 768px, // iPad Air
+    lg: 1024px, // iPad Pro
+    xl: 1280px,
+    xxl: 1480px, // 1080p displays
+    max: 1920px // max page width
+);
+
+$fluid-breakpoints: (
+    min: map-get($breakpoints, xs),
+    max: map-get($breakpoints, xxl)
+);
+
+meta[name="x-koch-breakpoints"] {
+    font-family: serialize-breakpoints($breakpoints);
+}

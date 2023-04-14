@@ -1,0 +1,12 @@
+.l-flex {
+    display: flex;
+
+    &--column {
+        flex-direction: column;
+
+        // Fix intrinsic scaling in IE
+        > * {
+            min-height: 1px;
+        }
+    }
+}

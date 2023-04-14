@@ -1,0 +1,6 @@
+@use "sass:math";
+
+$responsive-embed-ratios: (
+        16by9: math.div(9, 16),
+        4by3: 3 * 0.25,
+);

@@ -1,0 +1,7 @@
+@use "typography" as *;
+
+$type-scale-base: (
+    xs: $font-size-base,
+    lg: $font-size-base * 2
+);
+$type-scale: 1.25 !default;

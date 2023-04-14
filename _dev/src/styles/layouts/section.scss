@@ -1,0 +1,69 @@
+@use "../settings/colors" as *;
+
+.l-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--default {
+        background-color: $default-color;
+    }
+
+    &--primary {
+        background-color: $primary-color;
+    }
+
+    &--secondary {
+        background-color: $secondary-color;
+    }
+
+    &--tertiary {
+        background-color: $tertiary-color;
+    }
+
+    //&[data-styles*="highlight"] {
+    //    background-color: $highlight-color;
+    //}
+    //
+    //&[data-styles*="primary"] {
+    //    background-color: $primary-color;
+    //}
+    //
+    //&[data-styles*="secondary"] {
+    //    background-color: $secondary-color;
+    //}
+    //
+    //&[data-styles*="tertiary"] {
+    //    background-color: $tertiary-color;
+    //}
+    //
+    //@each $lat, $breakpoint in $breakpoints {
+    //    &[data-styles*="#{$lat}"] {
+    //        > * {
+    //            width: 100%;
+    //            max-width: to-rem(map-get($breakpoints, #{$lat}));
+    //        }
+    //    }
+    //}
+    //
+    //@each $gap, $gap-mq in $gaps {
+    //    &[data-styles*="╧-#{$gap}"] {
+    //        @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+    //    }
+    //
+    //    &[data-styles*="╤-#{$gap}"] {
+    //        @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, min)), to-rem(map-get($gap-mq, max))));
+    //    }
+    //}
+
+    //@each $gap, $gap-mq in $gaps {
+    //    &[data-styles*="╧-#{$gap}"] {
+    //        @include fluid-calc('padding-top', (to-rem(#{map-get($gap-mq, min)}), to-rem(#{map-get($gap-mq, max)})));
+    //    }
+    //
+    //    &[data-styles*="╤-#{$gap}"] {
+    //        @include fluid-calc('padding-bottom', (to-rem(#{map-get($gap-mq, min)}), to-rem(#{map-get($gap-mq, max)})));
+    //    }
+    //}
+}

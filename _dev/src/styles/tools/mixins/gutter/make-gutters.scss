@@ -1,0 +1,20 @@
+@use "../../../settings/breakpoints" as *;
+@use "../../functions/to-rem" as *;
+@use "gutter" as *;
+
+@mixin make-gutters($gutter, $type: 'inner') {
+    @if (type-of($gutter) == 'map') {
+        @each $breakpoint, $width in $gutter {
+            @if $breakpoint == nth(map-keys($breakpoints), 1) {
+                @include gutter($width, $type);
+            }
+            @else {
+                @include mq($breakpoint) {
+                    @include gutter($width, $type);
+                }
+            }
+        }
+    } @else {
+        @include gutter($gutter, $type);
+    }
+}

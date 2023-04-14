@@ -1,0 +1,28 @@
+@forward "underline";
+
+@mixin underline-stroke($element: 'span', $bgcolor: currentColor, $width: 100%, $height: 1px, $duration: 0.3s) {
+    #{$element} {
+        transition: background-size $duration;
+    }
+
+    &:hover {
+        #{$element} {
+            background-image: linear-gradient($bgcolor, $bgcolor);
+            background-size: $width $height;
+        }
+    }
+
+    &:focus-visible {
+        #{$element} {
+            background-size: $width $height;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            #{$element} {
+                background-size: $width $height;
+            }
+        }
+    }
+}

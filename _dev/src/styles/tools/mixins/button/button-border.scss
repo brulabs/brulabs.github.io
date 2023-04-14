@@ -1,0 +1,81 @@
+@use "../../../settings/colors" as *;
+@use "../../../settings/easings" as *;
+@use "sass:math";
+
+@mixin button-border($border-width: 3px, $border: true, $border-color: $primary-color, $border-color-hover: $secondary-color, $color: $text-color, $color-hover: $secondary-color, $background-color: $color-white, $background-color-hover: $color-white, $duration: .2, $ease: $easeInOutQuart) {
+    position: relative;
+    display: inline-block;
+    color: $color;
+    background-color: $background-color;
+    transition: $ease calc($duration * 4) + s;
+
+    @if $border {
+        border: $border-width solid $border-color;
+    }
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+
+    &::after {
+        right: -$border-width;
+        bottom: -$border-width;
+        border-bottom: $border-width solid $border-color-hover;
+        border-left: $border-width solid $border-color-hover;
+        transition: width $duration + s $ease $duration + s, height $duration + s $ease, visibility 0s calc($duration * 2) + s;
+
+        @if $border {
+            right: -$border-width;
+            bottom: -$border-width;
+        } @else {
+            right: 0;
+            bottom: -3px;
+        }
+    }
+
+    &::before {
+        border-top: $border-width solid $border-color-hover;
+        border-right: $border-width solid $border-color-hover;
+        transition: width $duration + s $ease calc($duration * 3) + s, height $duration + s $ease calc($duration * 2) + s, visibility 0s calc($duration * 4) + s;
+
+        @if $border {
+            top: -$border-width;
+            left: -$border-width;
+        } @else {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &:hover {
+        color: $color-hover;
+        background-color: $background-color-hover;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        visibility: visible;
+        transition: width $duration + s $ease calc($duration * 2) + s, height $duration $ease calc($duration * 3) + s, visibility 0s calc($duration * 2) + s;
+
+        @if $border {
+            width: calc(100% + ($border-width * 2));
+            height: calc(100% + ($border-width * 2));
+        } @else {
+            width: calc(100% + $border-width);
+            height: calc(100% + $border-width);
+        }
+    }
+
+    &:hover::after {
+        transition: width $duration + s $ease calc($duration * 2) + s, height $duration + s $ease calc($duration * 3) + s, visibility 0s calc($duration * 2) + s;
+    }
+
+    &:hover::before {
+        transition: width $duration + s $ease, height $duration + s $ease $duration + s;
+    }
+}

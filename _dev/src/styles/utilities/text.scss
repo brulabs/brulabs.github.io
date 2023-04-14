@@ -1,0 +1,5 @@
+@use "../tools/mixins/typography/t-medium" as *;
+
+.u-text-lead {
+    @include t-medium;
+}

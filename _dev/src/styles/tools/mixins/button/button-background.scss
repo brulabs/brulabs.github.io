@@ -1,0 +1,50 @@
+@use "../../../settings/colors" as *;
+@use "../../../settings/easings" as *;
+@use "sass:math";
+
+@mixin button-background($color: $color-white, $color-hover: $color-black, $color-background: $color-black, $color-background-hover: $color-gray, $ease: $easeInOutQuart, $duration: 0.7s, $skew: 50deg, $horizontal: left, $border-width: 0, $border-color: $color-black, $border-color-hover: $color-gray ) {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    background-color: $color-background;
+    color: $color;
+    border: $border-width solid $border-color;
+    transition: all math.div($duration, 2) $ease;
+    cursor: pointer; // Powermail submit button
+
+    span, input[type="submit"] { // Input field -> Powermail submit button
+        position: relative;
+        z-index: 1;
+        transition: color math.div($duration, 2) $ease;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        #{$horizontal}: -50%;
+        width: 0;
+        height: 100%;
+        content: '';
+        background-color: $color-background-hover;
+        transform: skew($skew);
+        transform-origin: top left;
+        transition: all $duration $ease;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $color-background;
+        border-color: $border-color-hover;
+        transition: all math.div($duration, 2) $ease;
+
+        span, input[type="submit"] { // Input field -> Powermail submit button
+            color: $color-hover;
+            transition: color math.div($duration, 2) $ease;
+        }
+
+        &::before {
+            width: 200%;
+            height: 100%;
+        }
+    }
+}

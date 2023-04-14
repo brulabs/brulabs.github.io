@@ -1,0 +1,30 @@
+@use "../tools/functions/to-rem" as *;
+@use "../tools/mixins/list/list-unstyled" as *;
+@use "../settings/colors" as *;
+
+ol {
+    @include list-unstyled;
+}
+
+ol:not([class]) {
+    .c-richtext & {
+        padding-left: to-rem(30px);
+        counter-reset: my-awesome-counter;
+
+        li {
+            position: relative;
+            counter-increment: my-awesome-counter;
+
+            &:not(:last-child) {
+                margin-bottom: to-rem(5px);
+            }
+
+            &::before {
+                position: absolute;
+                left: to-rem(-30px);
+                content: counter(my-awesome-counter) ".";
+                color: $text-color;
+            }
+        }
+    }
+}

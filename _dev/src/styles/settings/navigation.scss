@@ -1,0 +1,21 @@
+@use "../tools/functions/to-rem" as *;
+@use "../settings/colors" as *;
+@use "../settings/easings" as *;
+
+$navigation-link-color: $color-black;
+$navigation-link-color-hover: $color-black;
+$navigation-background-color: $secondary-color;
+$navigation-background-color-sub: $primary-color;
+$navigation-background-color-subsub: $secondary-color;
+$navigation-ease: $easeInSine;
+$navigation-duration: .35s;
+$navigation-delay: .2s;
+$navigation-font-size: to-rem(20px);
+$navigation-font-size-sub: to-rem(18px);
+$navigation-padding: to-rem(5px);
+$navigation-padding-sub: to-rem(5px);
+$navigation-border-bottom: 1px;
+$navigation-border-bottom-sub: 1px;
+
+$navigation-padding-top: 62px;
+$navigation-padding-top-mobile: 62px;

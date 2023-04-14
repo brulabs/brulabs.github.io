@@ -1,0 +1,29 @@
+@use "../../../settings/grid" as *;
+@use "sass:math";
+
+@mixin column($size: 'expand', $columns: $grid-columns) {
+    @if $size {
+        @if (type-of($size) == 'number') {
+            @if (unit($size) == '%') {
+                width: $size;
+            } @else {
+                @if $size < 1 {
+                    width: percentage($size);
+                } @else {
+                    width: percentage(math.div($size, $columns));
+                }
+            }
+        } @else {
+            width: auto;
+            max-width: 100%;
+
+            @if $size == 'shrink' {
+                flex: 0 0 auto;
+            }
+
+            @if $size == 'expand' {
+                flex: 1 1 auto;
+            }
+        }
+    }
+}

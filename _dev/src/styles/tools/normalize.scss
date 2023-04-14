@@ -1,0 +1,151 @@
+@use "../tools/mixins/button/button-unstyled" as *;
+@use "../settings/typography" as *;
+@use "../settings/spacing" as *;
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+canvas,
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+audio {
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+    line-height: inherit;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+fieldset {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+address {
+    font-style: inherit;
+}
+
+pre {
+    overflow: auto;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid;
+    color: inherit;
+    opacity: 0.2;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+
+img {
+    display: inline-block;
+}
+
+strike,
+s {
+    text-decoration: line-through;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: 0.8rem;
+    bottom: 0;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.8rem;
+    top: 0;
+}
+
+svg {
+    display: inline-block;
+}
+
+u {
+    text-decoration-line: underline;
+}
+
+button {
+    @include button-unstyled;
+}
+
+strong,
+b {
+    font-family: $font-family-secondary;
+    font-weight: inherit;
+}
+
+blockquote,
+figure,
+fieldset {
+    margin: 0;
+}
+
+address,
+blockquote,
+table,
+figure,
+form,
+fieldset,
+legend,
+pre,
+dl,
+ul,
+ol,
+hr,
+p {
+    margin-top: 0;
+    margin-bottom: $spacing-base;
+
+    @if $spacing-reset {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

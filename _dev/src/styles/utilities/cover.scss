@@ -1,0 +1,17 @@
+@use "../tools/mixins/cover" as *;
+
+.u-cover-object {
+    @include cover-object;
+}
+
+.u-cover-media {
+    @include cover-media;
+}
+
+.u-cover-background {
+    @include cover-background;
+}
+
+.u-cover-link {
+    @include cover-link;
+}

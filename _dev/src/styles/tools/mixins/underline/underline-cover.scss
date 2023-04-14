@@ -1,0 +1,26 @@
+@forward "underline";
+@use "../../functions/to-rem" as *;
+
+@mixin underline-cover($element: 'span', $distance: 0px, $bgcolor: currentColor, $width: 100%, $height: 1px, $duration: 0.3s, $transitionTiming: $easeOutSine, $hoverColor: currentColor, $hoverWidth: 100%, $hoverHeight: 1px) {
+    #{$element} {
+        transition: color $duration $transitionTiming, background-size $duration $transitionTiming;
+    }
+
+    &:hover {
+        #{$element} {
+            margin: to-rem(-$distance);
+            padding: to-rem($distance);
+            color: $hoverColor;
+            background-size: $hoverWidth $hoverHeight;
+        }
+    }
+
+    &:focus-visible {
+        #{$element} {
+            margin: to-rem(-$distance);
+            padding: to-rem($distance);
+            color: $hoverColor;
+            background-size: $hoverWidth $hoverHeight;
+        }
+    }
+}

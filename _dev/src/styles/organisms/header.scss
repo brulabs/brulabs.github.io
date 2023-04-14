@@ -1,0 +1,17 @@
+@use "../tools/functions/to-rem" as *;
+@use "../tools/mixins/fluid-calc" as *;
+@use "../settings/breakpoints" as *;
+
+.header {
+    @include fluid-calc('padding-top', (to-rem(15px), to-rem(30px)));
+
+    &__container {
+        max-width: map-get($breakpoints, lg);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &__inner {
+        text-align: center;
+    }
+}

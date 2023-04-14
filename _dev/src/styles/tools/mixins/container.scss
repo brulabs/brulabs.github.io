@@ -1,0 +1,17 @@
+@use "../functions/to-rem" as *;
+@use "../../settings/grid" as *;
+@use "gutter/make-gutters" as *;
+
+@mixin container($gutter: $grid-container-gutter, $width: $grid-container) {
+    @include make-gutters($gutter);
+
+    max-width: $width;
+
+    @if ($width != 'none') {
+        @if (type-of($gutter) == 'map') {
+            $width: to-rem($width) - to-rem(nth(map-values($gutter), length($gutter)));
+        } @else {
+            $width: to-rem($width) - to-rem($gutter);
+        }
+    }
+}

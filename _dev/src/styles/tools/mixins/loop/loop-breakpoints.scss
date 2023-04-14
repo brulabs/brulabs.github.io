@@ -1,0 +1,45 @@
+@use '../../../../../node_modules/sass-mq/mq' as sass-mq;
+@use "../../functions/to-rem" as *;
+@use "../../../settings/breakpoints" as *;
+
+@mixin loop-breakpoints($breakpoints: $breakpoints, $inclusive: true, $mq: true) {
+    $breakpoint-keys: map-keys($breakpoints);
+
+    @for $i from 1 through length($breakpoint-keys) {
+        $breakpoint: nth($breakpoint-keys, $i) !global;
+        $is-first-breakpoint: $breakpoint == nth($breakpoint-keys, 1) !global;
+        $is-last-breakpoint: $breakpoint == nth($breakpoint-keys, length($breakpoint-keys)) !global;
+
+        @if $mq {
+            @if $inclusive {
+                @if $is-first-breakpoint {
+                    @content;
+                } @else {
+                    @include sass-mq.mq($breakpoint, $breakpoints: $breakpoints) {
+                        @content;
+                    }
+                }
+            } @else {
+                @if $is-first-breakpoint {
+                    @if length($breakpoint-keys) > 1 {
+                        @include sass-mq.mq($until: nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+                            @content;
+                        }
+                    } @else {
+                        @content;
+                    }
+                } @else if $is-last-breakpoint {
+                    @include sass-mq.mq($breakpoint, $breakpoints: $breakpoints) {
+                        @content;
+                    }
+                } @else {
+                    @include sass-mq.mq($breakpoint, nth($breakpoint-keys, $i + 1), $breakpoints: $breakpoints) {
+                        @content;
+                    }
+                }
+            }
+        } @else {
+            @content;
+        }
+    }
+}

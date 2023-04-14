@@ -1,0 +1,33 @@
+@use "str-replace" as *;
+@use "sass:math";
+
+@function svg-url($svg) {
+    // add missing namespace
+    @if not str-index($svg,xmlns) {
+        $svg: str-replace($svg, '<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+
+    // chunk up string in order to avoid "stack level too deep" error
+    $encoded: '';
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(math.div(str-length($svg), $slice));
+
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1);
+
+        // encode
+        $chunk: str-replace($chunk, '"', '\'');
+        $chunk: str-replace($chunk, '%', '%25');
+        $chunk: str-replace($chunk, '#', '%23');
+        $chunk: str-replace($chunk, '{', '%7B');
+        $chunk: str-replace($chunk, '}', '%7D');
+        $chunk: str-replace($chunk, '<', '%3C');
+        $chunk: str-replace($chunk, '>', '%3E');
+
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+
+    @return url("data:image/svg+xml,#{$encoded}");
+}

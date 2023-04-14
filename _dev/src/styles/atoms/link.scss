@@ -1,0 +1,59 @@
+@use "../tools/functions/get-icon" as *;
+@use "../tools/functions/to-rem" as *;
+@use "../tools/mixins/fluid-calc" as *;
+@use "../settings/colors" as *;
+@use "../settings/typography" as *;
+
+.c-link {
+    @include fluid-calc('font-size', (to-rem(20px), to-rem(30px)));
+
+    display: inline-flex;
+    align-items: center;
+    font-family: $font-family-secondary;
+
+    span {
+        margin-right: to-rem(15px);
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: to-rem(24px);
+        height: to-rem(17px);
+        background-image: url(get-icon('arrow', $text-color));
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        transition: all 0.3s ease-in-out;
+    }
+
+    // Download links and load more button
+    &--load-more,
+    &[href$=".pdf"],
+    &[href$=".doc"],
+    &[href$=".docx"],
+    &[href$=".jpg"],
+    &[href$=".jpeg"],
+    &[href$=".png"],
+    &[href$=".mov"],
+    &[href$=".mp4"],
+    &[href$=".mp3"],
+    &[href$=".zip"] {
+        &::after {
+            width: to-rem(18px);
+            height: to-rem(23px);
+            transform: rotate(45deg);
+        }
+    }
+
+    // External links
+    &[href^="http://"],
+    &[href^="https://"] {
+        &::after {
+            width: to-rem(22px);
+            height: to-rem(20px);
+            margin-bottom: to-rem(4px);
+            transform: rotate(-15deg);
+        }
+    }
+}

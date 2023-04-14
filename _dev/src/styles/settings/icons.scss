@@ -1,0 +1,22 @@
+@use "../settings/colors" as *;
+
+$icons: (
+    radio:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M4 1C2.3 1 1 2.3 1 4s1.3 3 3 3 3-1.3 3-3S5.7 1 4 1z"/></svg>',
+    checkbox:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="#{$icon-color}" d="M6.4 1L5.7 1.7 2.9 4.5 2.1 3.7 1.4 3 0 4.4l0.7 0.7 1.5 1.5 0.7 0.7 0.7-0.7 3.5-3.5 0.7-0.7L6.4 1 6.4 1z"/></svg>',
+    select:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="#{$icon-color}" d="m1.41 0 4.59 4.58 4.59-4.58 1.41 1.41l-6 6-6-6z"/></svg>',
+    play:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="94.457" height="94.457" viewBox="0 0 94.457 94.457"><g transform="translate(-1.5 -1.5)"><path d="M94.457,48.729A45.729,45.729,0,1,1,48.729,3,45.729,45.729,0,0,1,94.457,48.729Z" transform="translate(0 0)" fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M15,12,42.437,30.291,15,48.583Z" transform="translate(24.583 18.437)" fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></g></svg>',
+    close:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24.02" height="24.02"><g fill="none" stroke="#{$icon-color}" stroke-width="1.5"><path d="m.53.531 22.96 22.96"/><path d="M23.489.53.529 23.49"/></g></svg>',
+    arrow:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="41.115" height="34.843" viewBox="0 0 41.115 34.843"><path fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" d="m23.9 34.136 16.715-16.714L23.9.707"/><path fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" d="M40.615 17.422H.5"/></svg>',
+    phone:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="27.061" height="27.11"><g><path d="M25.558 19.549v3.629a2.419 2.419 0 0 1-2.637 2.422 23.94 23.94 0 0 1-10.44-3.714 23.589 23.589 0 0 1-7.258-7.258A23.94 23.94 0 0 1 1.51 4.137 2.419 2.419 0 0 1 3.917 1.5h3.629a2.419 2.419 0 0 1 2.419 2.081 15.532 15.532 0 0 0 .847 3.4 2.419 2.419 0 0 1-.544 2.552l-1.536 1.536a19.355 19.355 0 0 0 7.258 7.258l1.536-1.536a2.419 2.419 0 0 1 2.552-.544 15.532 15.532 0 0 0 3.4.847 2.419 2.419 0 0 1 2.081 2.456Z" fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></g></svg>',
+    mail:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="28.372" height="21.468"><g fill="none" stroke="#{$icon-color}" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="M4.508 1.5h19.356a2.373 2.373 0 0 1 2.419 2.308v13.851a2.373 2.373 0 0 1-2.419 2.308H4.508a2.373 2.373 0 0 1-2.419-2.308V3.808A2.373 2.373 0 0 1 4.508 1.5Z"/><path d="m26.283 3.5-12.094 8.468L2.089 3.5"/></g></svg>',
+    spinner:
+    '<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" data-name="Ebene 1"><path fill="#{$icon-color}" d="M224 32c0-17.67 14.3-32 32-32 141.4 0 256 114.6 256 256 0 46.6-12.5 90.4-34.3 128-8.8 15.3-28.4 20.6-44.6 11.7-14.4-8.8-19.6-28.4-10.8-44.6 16.3-27.3 25.7-60.1 25.7-96 0-106-86-192-192-192-17.7 0-32-13.43-32-32v.9Z"/><path d="M255.1 64c-106 0-192 85.1-192 192s86 192 192 192c71 0 132.2-37.5 165.8-93.6l.1.1c-6.9 14.9-1.5 32.8 12.1 41.2 16.2 8.9 35.8 3.6 44.6-11.7.2-.3.4-.6.5-.9C434.1 460.1 351.1 512 256 512 114.6 512 0 397.4 0 256S114.6 0 256 0c-17.7 0-32 14.33-32 32s14.3 32 32 32h-.9Z" style="isolation:isolate;opacity:.4"/></svg>',
+) !default;

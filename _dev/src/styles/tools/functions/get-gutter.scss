@@ -1,0 +1,19 @@
+@use "../../settings/grid" as *;
+
+@function get-gutter($breakpoint: false, $gutter: $grid-gutter) {
+    @if (type-of($gutter) == 'map') {
+        @if $breakpoint {
+            @if map-has-key($gutter, $breakpoint) {
+                $gutter: map-get($gutter, $breakpoint);
+            }
+            @else {
+                @error "Breakpoint #{$breakpoint} wasn't found in $gutter.";
+            }
+        }
+        @else {
+            $gutter: nth(map-values($gutter), 1);
+        }
+    }
+
+    @return to-rem($gutter);
+}

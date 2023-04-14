@@ -1,0 +1,15 @@
+@use "../../functions/to-rem" as *;
+
+@mixin gutter($gutter, $type) {
+    $gutter: to-rem($gutter * 0.5);
+
+    @if $type == 'inner' {
+        padding-left: $gutter;
+        padding-right: $gutter;
+    } @else {
+        $gutter: $gutter * -1;
+
+        margin-left: $gutter;
+        margin-right: $gutter;
+    }
+}

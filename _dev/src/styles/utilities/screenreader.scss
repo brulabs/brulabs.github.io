@@ -1,0 +1,10 @@
+@use "../tools/mixins/screenreader/sr-only" as *;
+@use "../tools/mixins/screenreader/sr-only-focusable" as *;
+
+.u-sr-only {
+  @include sr-only;
+}
+
+.u-sr-only-focusable {
+  @include sr-only-focusable;
+}

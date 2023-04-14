@@ -1,0 +1,8 @@
+@use "../../../settings/grid" as *;
+@use "sass:math";
+
+@mixin column-offset($size, $columns: $grid-columns) {
+    @if $size < $columns {
+        margin-left: percentage(math.div($size, $columns));
+    }
+}

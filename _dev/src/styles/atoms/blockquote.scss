@@ -1,0 +1,15 @@
+blockquote {
+    position: relative;
+
+    p::before {
+        content: open-quote;
+    }
+
+    p::after {
+        content: close-quote;
+    }
+
+    p {
+        quotes: "«" "»" "‘" "’";
+    }
+}

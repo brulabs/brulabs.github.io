@@ -1,0 +1,30 @@
+@use "../../../settings/grid" as *;
+@use "sass:math";
+
+@mixin column-loop($breakpoint, $pull: $grid-pull-classes, $push: $grid-push-classes, $offset: $grid-offset-classes) {
+    @for $i from 0 through $grid-columns {
+        @if $i > 0 {
+            .l-col-#{$breakpoint}-#{$i} {
+                @include column($i, $grid-columns);
+            }
+        }
+
+        @if $pull {
+            .l-col-#{$breakpoint}-pull-#{$i} {
+                @include column-pull($i, $grid-columns);
+            }
+        }
+
+        @if $push {
+            .l-col-#{$breakpoint}-push-#{$i} {
+                @include column-push($i, $grid-columns);
+            }
+        }
+
+        @if $offset {
+            .l-col-#{$breakpoint}-offset-#{$i} {
+                @include column-offset($i, $grid-columns);
+            }
+        }
+    }
+}

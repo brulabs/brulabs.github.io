@@ -1,0 +1,24 @@
+@use "../tools/functions/to-rem" as *;
+@use "../settings/colors" as *;
+@use "../settings/easings" as *;
+
+.c-btn {
+    display: inline-block;
+    padding: to-rem(11px) to-rem(28px) to-rem(13px) to-rem(28px);
+    background-color: transparent;
+    border: to-rem(2px) solid $text-color;
+    border-radius: to-rem(24px);
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s $easeInOutCubic;
+
+    // Fallback for Firefox
+    @-moz-document url-prefix() {
+        padding: to-rem(13px) to-rem(28px) to-rem(11px) to-rem(28px);
+    }
+
+    &:hover {
+        background-color: $text-color;
+        color: $color-white;
+    }
+}

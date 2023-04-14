@@ -1,0 +1,6 @@
+@use "../../functions/to-rem" as *;
+@use "../fluid-calc" as *;
+
+@mixin t-medium {
+    @include fluid-calc('font-size', (to-rem(24px), to-rem(30px)));
+}

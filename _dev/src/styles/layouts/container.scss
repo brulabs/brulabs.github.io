@@ -1,0 +1,16 @@
+@use "../settings/breakpoints" as *;
+@use "../tools/mixins/container" as *;
+
+.l-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--small {
+        @include container($width: map-get($breakpoints, lg));
+    }
+
+    &--default {
+        @include container($width: map-get($breakpoints, xxl));
+    }
+}

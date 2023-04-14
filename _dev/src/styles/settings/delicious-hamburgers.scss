@@ -1,0 +1,13 @@
+@use "colors";
+
+$hamburger-class-name: 'c-hamburger';
+$hamburger-active-class-name: 'is-active';
+$hamburger-thickness: 3px;
+$hamburger-bar-spacing: 12px;
+$hamburger-border-radius: 0px;
+$hamburger-color: colors.$text-color;
+$hamburger-size: 40px;
+$hamburger-padding: 10px;
+$hamburger-animations: (
+    'collapse'
+);

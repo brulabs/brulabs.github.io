@@ -1,0 +1,11 @@
+@use "../../../settings/grid" as *;
+@use "../gutter/make-gutters" as *;
+@use "column" as *;
+@use "sass:math";
+
+@mixin column-base($gutter: $grid-gutter, $size: 100%, $columns: $grid-columns) {
+    @include make-gutters($gutter);
+    @include column($size, $columns);
+
+    position: relative;
+}

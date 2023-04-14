@@ -1,0 +1,44 @@
+@use "../tools/mixins/loop/loop-breakpoints" as *;
+
+.u-invisible {
+    visibility: hidden !important;
+}
+
+.hidden,
+.u-hidden {
+    display: none !important;
+}
+
+@include loop-breakpoints($mq: false) {
+    .u-visible-#{$breakpoint} {
+        display: none !important;
+    }
+
+    @if not ($is-first-breakpoint or $is-last-breakpoint) {
+        .u-visible-#{$breakpoint}-up {
+            display: none !important;
+        }
+    }
+}
+
+@include loop-breakpoints($inclusive: false) {
+    .u-hidden-#{$breakpoint} {
+        display: none !important;
+    }
+
+    .u-visible-#{$breakpoint} {
+        display: block !important;
+    }
+}
+
+@include loop-breakpoints {
+    @if not ($is-first-breakpoint or $is-last-breakpoint) {
+        .u-hidden-#{$breakpoint}-up {
+            display: none !important;
+        }
+
+        .u-visible-#{$breakpoint}-up {
+            display: block !important;
+        }
+    }
+}

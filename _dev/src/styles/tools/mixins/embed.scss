@@ -1,0 +1,11 @@
+@use "../../settings/ratios" as *;
+
+@mixin embed-modifiers {
+    @each $name, $ratio in $responsive-embed-ratios {
+        &--#{$name} {
+            &::before {
+                padding-bottom: percentage($ratio);
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@use "pow" as *;
+@use "../../settings/typography" as *;
+
+@function modular-scale($exp, $size: $font-size-base, $type-scale: $type-scale) {
+    @return pow($type-scale, $exp) * $size;
+}

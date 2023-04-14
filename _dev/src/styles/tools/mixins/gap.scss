@@ -1,0 +1,5 @@
+@use "fluid-calc" as *;
+
+@mixin gap($grid-gutter, $grid-gutter-mobile) {
+    @include fluid-calc('gap', ($grid-gutter-mobile, $grid-gutter ));
+}
