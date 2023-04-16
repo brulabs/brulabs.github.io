@@ -1,16 +1,19 @@
-@use "../settings/breakpoints" as *;
+@use "../tools/functions/to-rem" as *;
 @use "../tools/mixins/container" as *;
+@use "../settings/breakpoints" as *;
 
-.l-container {
+.container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-right: to-rem(15px);
+    padding-left: to-rem(15px);
 
     &--small {
         @include container($width: map-get($breakpoints, lg));
     }
 
-    &--default {
+    &--medium {
         @include container($width: map-get($breakpoints, xxl));
     }
 }

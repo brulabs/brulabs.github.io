@@ -1,76 +1,31 @@
 @use "../tools/functions/to-rem" as *;
 @use "../tools/mixins/button/button-unstyled" as *;
 @use "../tools/mixins/fluid-calc" as *;
+@use "../settings/breakpoints" as *;
 @use "../settings/colors" as *;
 
 .logo {
     @include button-unstyled;
-    @include fluid-calc('font-size', (to-rem(50px), to-rem(120px)));
 
-    position: relative;
-    display: inline-block;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 1;
-    cursor: pointer;
-
-    &::before {
-        //content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: -1;
-        display: block;
-        width: 70%;
-        height: 0;
-        transform: translateX(-50%);
-        animation: pulse 2s infinite;
-        overflow: hidden;
-    }
-
-    html.dark-mode & {
-        text-shadow: $color-white 1px 0 6px;
-        color: $global-bg-dark;
-
-        &:hover {
-            text-shadow: $color-white 1px 0 6px;
-            color: $global-bg-dark;
-        }
-    }
-
-    html.light-mode & {
-        text-shadow: $global-bg-dark 1px 0 6px;
-        color: $color-white;
-
-        &:hover {
-            text-shadow: $global-bg-dark 1px 0 6px;
-            color: $color-white;
-        }
-    }
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(black, 0.7);
-    }
-
-    50% {
-        box-shadow: 0 0 0 0.8em rgba(black, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(black, 0);
-    }
-}
-
-.logo-grid {
     display: grid;
     grid-template-columns: repeat(25, 1fr);
-    grid-template-rows: repeat(5);
+    grid-template-rows: repeat(5, 1fr);
+    width: 100%;
+    max-width: map-get($breakpoints, md);
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
 
-    &-item {
-        background-color: $logo-color;
+    &-pixel {
         aspect-ratio: 1/1;
+
+        &:not(:nth-child(32)):not(:nth-child(47)):not(:nth-child(53)) {
+            background-color: $logo-color;
+
+            html.light-mode & {
+                background-color: $text-color;
+            }
+        }
 
         // Letter b
         &:nth-child(1) {
@@ -235,7 +190,6 @@
         &:nth-child(32) {
             grid-column-start: 16;
             grid-row-start: 5;
-            background-color: transparent;
             overflow: hidden;
 
             &::after {
@@ -244,6 +198,10 @@
                 aspect-ratio: 1/1;
                 background-color: $logo-color;
                 clip-path: polygon(0 0, 0 100%, 100% 0);
+
+                html.light-mode & {
+                    background-color: $text-color;
+                }
             }
         }
 
@@ -322,7 +280,6 @@
         &:nth-child(47) {
             grid-column-start: 23;
             grid-row-start: 4;
-            background-color: transparent;
             overflow: hidden;
 
             &::after {
@@ -331,6 +288,10 @@
                 aspect-ratio: 1/1;
                 background-color: $logo-color;
                 clip-path: polygon(0 0, 100% 0, 100% 100%);
+
+                html.light-mode & {
+                    background-color: $text-color;
+                }
             }
         }
 
@@ -362,7 +323,6 @@
         &:nth-child(53) {
             grid-column-start: 25;
             grid-row-start: 4;
-            background-color: transparent;
             overflow: hidden;
 
             &::after {
@@ -371,6 +331,10 @@
                 aspect-ratio: 1/1;
                 background-color: $logo-color;
                 clip-path: polygon(0 0, 0 100%, 100% 100%);
+
+                html.light-mode & {
+                    background-color: $text-color;
+                }
             }
         }
 
@@ -380,3 +344,65 @@
         }
     }
 }
+
+
+
+//.logo {
+//    @include button-unstyled;
+//    @include fluid-calc('font-size', (to-rem(50px), to-rem(120px)));
+//
+//    position: relative;
+//    display: inline-block;
+//    font-weight: 500;
+//    font-style: normal;
+//    line-height: 1;
+//    cursor: pointer;
+//
+//    &::before {
+//        //content: '';
+//        position: absolute;
+//        top: 50%;
+//        left: 50%;
+//        z-index: -1;
+//        display: block;
+//        width: 70%;
+//        height: 0;
+//        transform: translateX(-50%);
+//        animation: pulse 2s infinite;
+//        overflow: hidden;
+//    }
+//
+//    html.dark-mode & {
+//        text-shadow: $color-white 1px 0 6px;
+//        color: $global-bg-dark;
+//
+//        &:hover {
+//            text-shadow: $color-white 1px 0 6px;
+//            color: $global-bg-dark;
+//        }
+//    }
+//
+//    html.light-mode & {
+//        text-shadow: $global-bg-dark 1px 0 6px;
+//        color: $color-white;
+//
+//        &:hover {
+//            text-shadow: $global-bg-dark 1px 0 6px;
+//            color: $color-white;
+//        }
+//    }
+//}
+
+//@keyframes pulse {
+//    0% {
+//        box-shadow: 0 0 0 0 rgba(black, 0.7);
+//    }
+//
+//    50% {
+//        box-shadow: 0 0 0 0.8em rgba(black, 0);
+//    }
+//
+//    100% {
+//        box-shadow: 0 0 0 0 rgba(black, 0);
+//    }
+//}

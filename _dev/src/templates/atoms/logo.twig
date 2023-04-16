@@ -2,12 +2,18 @@
 {#    <span>brulabs</span>#}
 {#</a>#}
 
+{#<button id="logo" class="logo" aria-label="Toggle light/dark mode">#}
+{#    <span>brulabs</span>#}
+{#</button>#}
+
 <button id="logo" class="logo" aria-label="Toggle light/dark mode">
-    <span>brulabs</span>
+    {% for i in 0..53 %}
+        <span class="logo-pixel"></span>
+    {% endfor %}
 </button>
 
-<div class="logo-grid">
-    {% for i in 0..53 %}
-        <div class="logo-grid-item"></div>
-    {% endfor %}
-</div>
+{#<div class="logo-grid">#}
+{#    {% for i in 0..53 %}#}
+{#        <div class="logo-grid-item"></div>#}
+{#    {% endfor %}#}
+{#</div>#}
