@@ -1,8 +1,11 @@
 @use "../tools/mixins/button/button-unstyled" as *;
+@use "../tools/mixins/hide-scrollbar" as *;
 @use "../settings/typography" as *;
 @use "../settings/spacing" as *;
 
 html {
+    @include hide-scollbar;
+
     scroll-behavior: smooth;
     overflow-x: hidden;
     box-sizing: border-box;

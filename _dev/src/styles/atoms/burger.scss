@@ -6,12 +6,14 @@
 $burger-size: to-rem(50px);
 $bar-height: to-rem(3px);
 $bar-color: $color-woodsmoke;
+$bar-active-color: $color-white;
 $transition-duration: 0.3s;
 
 .burger {
     @include button-unstyled;
 
     position: absolute;
+    z-index: 222;
     right: 15px;
     bottom: 15px;
     width: $burger-size;
@@ -75,20 +77,28 @@ $transition-duration: 0.3s;
             background-color: transparent;
         }
 
-        .bar:first-child::before {
-            transform: rotateZ(45deg) scaleX(1.4) translate($bar-height, $bar-height);
+        .bar::before, .bar::after {
+            background-color: $bar-active-color;
         }
 
-        .bar:first-child::after {
-            transform: rotateZ(-45deg) scaleX(1.4) translate($bar-height, -$bar-height);
+        .bar:first-child {
+            &::before {
+                transform: rotateZ(45deg) scaleX(1.4) translate($bar-height, $bar-height);
+            }
+
+            &::after {
+                transform: rotateZ(-45deg) scaleX(1.4) translate($bar-height, -$bar-height);
+            }
         }
 
-        .bar:last-child::before {
-            transform: rotateZ(-45deg) scaleX(1.4) translate(-$bar-height, $bar-height);
-        }
+        .bar:last-child {
+            &::before {
+                transform: rotateZ(-45deg) scaleX(1.4) translate(-$bar-height, $bar-height);
+            }
 
-        .bar:last-child::after {
-            transform: rotateZ(45deg) scaleX(1.4) translate(-$bar-height, -$bar-height);
+            &::after {
+                transform: rotateZ(45deg) scaleX(1.4) translate(-$bar-height, -$bar-height);
+            }
         }
     }
 
