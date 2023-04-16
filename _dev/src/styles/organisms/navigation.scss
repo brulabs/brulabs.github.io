@@ -12,11 +12,26 @@
     background-color: $global-bg-dark;
     border-top-left-radius: 50%;
 
+    &:not(.is-open) {
+        ul {
+            display: none;
+        }
+    }
+
     &.is-open {
         width: 100%;
         height: 100%;
         visibility: visible;
         opacity: 1;
         border-top-left-radius: 0;
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            width: 50%;
+            aspect-ratio: 1/1;
+        }
     }
 }
