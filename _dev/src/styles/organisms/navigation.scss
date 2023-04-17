@@ -1,3 +1,4 @@
+@use "../tools/functions/to-rem" as *;
 @use "../settings/breakpoints" as *;
 @use "../settings/colors" as *;
 
@@ -32,15 +33,28 @@
 
     ul {
         display: flex;
+        gap: to-rem(50px);
         flex-wrap: wrap;
         max-width: map-get($breakpoints, sm);
 
         li {
-            width: 50%;
+            width: calc(50% - #{to-rem(25px)});
             aspect-ratio: 1/1;
 
             a {
                 display: block;
+                padding: to-rem(20px);
+                border: 1px solid rgba($color-white, 0.5);
+                //border-radius: to-rem(5px);
+                background: none;
+                color: rgba($color-white, 0.5);
+                transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+                &:hover {
+                    background: none;
+                    border-color: $color-white;
+                    color: $color-white;
+                }
 
                 svg {
                     width: 100%;
