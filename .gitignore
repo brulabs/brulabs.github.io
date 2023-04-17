@@ -23,8 +23,8 @@ node_modules
 build
 
 # Live folders
-#Css
-#Fonts
-#Icons
-#Images
-#Javascript
+Css
+Fonts
+Icons
+Images
+Javascript
