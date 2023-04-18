@@ -1,13 +1,13 @@
-@use "../tools/functions/to-rem" as *;
-@use "../settings/gaps" as *;
-@use "../tools/mixins/fluid-calc" as *;
-
-@each $gap, $gap-mq in $gaps {
-    .u-gap-top-#{$gap} {
-        @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, xs)), to-rem(map-get($gap-mq, lg))));
-    }
-
-    .u-gap-bottom-#{$gap} {
-        @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, xs)), to-rem(map-get($gap-mq, lg))));
-    }
-}
+//@use "../tools/functions/to-rem" as *;
+//@use "../settings/gaps" as *;
+//@use "../tools/mixins/fluid-calc" as *;
+//
+//@each $gap, $gap-mq in $gaps {
+//    .u-gap-top-#{$gap} {
+//        @include fluid-calc('padding-top', (to-rem(map-get($gap-mq, xs)), to-rem(map-get($gap-mq, lg))));
+//    }
+//
+//    .u-gap-bottom-#{$gap} {
+//        @include fluid-calc('padding-bottom', (to-rem(map-get($gap-mq, xs)), to-rem(map-get($gap-mq, lg))));
+//    }
+//}

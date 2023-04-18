@@ -1,4 +1,9 @@
-<section class="section" data-styles="{{ data_styles }}">
+<section
+    class="section section--{% if section is not empty %}{{ section }}{% else %}default{% endif %}"
+    data-container="{{ data_container }}"
+    data-gap-top="{{ gap_top }}"
+    data-gap-bottom="{{ gap_bottom }}"
+>
     <h2>{{ section_title }}</h2>
     {% block section %}{% endblock %}
 </section>

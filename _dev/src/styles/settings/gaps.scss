@@ -1,18 +1,18 @@
 $gaps: (
     zero: (
-        xs: 0,
-        lg: 0
+        min: 0,
+        max: 0
     ),
     small: (
-        xs: 25px,
-        lg: 50px
+        min: 25px,
+        max: 50px
     ),
     medium: (
-        xs: 50px,
-        lg: 75px
+        min: 50px,
+        max: 75px
     ),
     large: (
-        xs: 75px,
-        lg: 100px
+        min: 75px,
+        max: 100px
     ),
 );

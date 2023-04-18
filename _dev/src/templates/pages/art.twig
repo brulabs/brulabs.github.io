@@ -1,0 +1,40 @@
+{% extends "../templates/page.twig" %}
+{% set page_title = "Kunst" %}
+{% set page_modifier = "" %}
+
+{% block main %}
+
+    {% embed "../templates/section.twig" with {
+        section_title: 'Kunst',
+        data_container: 'md',
+        gap_top: 'small',
+        gap_bottom: 'large'
+    } %}
+        {% block section %}
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus doloribus eligendi facere fugiat, fugit iure laborum nam neque numquam odit officiis placeat quisquam recusandae reprehenderit sit soluta, temporibus ut.
+            </p>
+
+        {% endblock %}
+    {% endembed %}
+
+
+
+
+{% endblock %}
+
+{#
+{% embed "../templates/section.twig" with {
+    section_title: 'Abschnitt Titel',
+    data_styles: 'highlight md ╧-g-md ╤-g-sm'
+} %}
+    {% block section %}
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, accusamus doloribus eligendi facere fugiat, fugit iure laborum nam neque numquam odit officiis placeat quisquam recusandae reprehenderit sit soluta, temporibus ut.
+        </p>
+
+    {% endblock %}
+{% endembed %}
+#}
