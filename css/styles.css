@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @font-face {
   font-family: "hack-regular";
   font-style: normal;
@@ -7,28 +8,10 @@
   src: url("../assets/hack-regular.woff2") format("woff2"), url("../assets/hack-regular.woff") format("woff");
 }
 
-:root{
-  --base-px: 16; /* 1rem in px */
-  --min-px: 32;
-  --max-px: 120;
-  --min-rem: calc(var(--min-px) / var(--base-px) * 1rem); /* 2rem */
-  --max-rem: calc(var(--max-px) / var(--base-px) * 1rem); /* 7.5rem */
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
 .page {
   font-size: 1rem;
+  text-align: center;
   font-family: "hack-regular", Courier New, sans-serif;
-  line-height: 1.4;
-  overflow-x: hidden;
 }
 
 .light-mode .page {
@@ -41,12 +24,28 @@
   color: #fafafa;
 }
 
-h1 { font-size: clamp(var(--min-rem), calc(1.5rem + 3.5vw), var(--max-rem)); }
+h1 {
+  font-size: clamp(32px, 10vw, 128px);
+}
 
 .icons {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 2rem;
+
 }
 
 .icon img {
+  width: 100%;
+  height: auto;
   border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .icons {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
