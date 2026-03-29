@@ -1,4 +1,0 @@
-@mixin lateral-spacing {
-    @include fluid-calc('padding-right', (to-rem(15px), to-rem(60px)));
-    @include fluid-calc('padding-left', (to-rem(15px), to-rem(60px)));
-}

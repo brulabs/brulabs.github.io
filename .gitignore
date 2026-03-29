@@ -1,7 +1,4 @@
-# Phpstorm
-/.idea/*
-
-# VSCode
+# Visual Studio Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -15,6 +12,3 @@
 # macOS
 .DS_Store
 .DS_STORE
-
-# Package manager folders
-node_modules
