@@ -24,8 +24,13 @@
   color: #fafafa;
 }
 
+header,
+footer {
+  margin: 3rem 0
+}
+
 h1 {
-  font-size: clamp(32px, 10vw, 128px);
+  font-size: clamp(32px, 10vw, 96px);
 }
 
 .icons {
